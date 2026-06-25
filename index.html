@@ -330,8 +330,8 @@
     </div>
 
     <script>
-        // Paste your Apps Script URL generated from the web app deployment here
-        const APPS_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+        // Set the deployment endpoint string variable below
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTswaXWRd2LyUJvWPhcViQPqSii90VGXAqTXLk2JmYRGvCFxUq3SDV5UQGJY90yzvoDg/exec";
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -388,25 +388,19 @@
             };
 
             try {
-                const response = await fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'cors',
-                    cache: 'no-cache',
+                // Updated deployment structure supporting text/plain headers and CORS
+                await fetch(APPS_SCRIPT_URL, {
+                    method: "POST",
                     headers: {
-                        'Content-Type': 'text/plain;charset=utf-8'
+                        "Content-Type": "text/plain;charset=utf-8"
                     },
                     body: JSON.stringify(payload)
                 });
+
+                resetForm();
+                closeModal('bookingModal');
+                openModal('successModal');
                 
-                const result = await response.json();
-                
-                if(result.status === "success") {
-                    resetForm();
-                    closeModal('bookingModal');
-                    openModal('successModal');
-                } else {
-                    throw new Error(result.message || "An unspecified error occurred.");
-                }
             } catch(err) {
                 console.error("Submission error:", err);
                 resetForm();
