@@ -373,12 +373,15 @@
         }
 
         // Form submission → Apps Script SPA Style no-reload
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin mr-2"></i> Submitting...`;
+        <script>
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTswaXWRd2LyUJvWPhcViQPqSii90VGXAqTXLk2JmYRGvCFxUq3SDV5UQGJY90yzvoDg/exec";
+
+async function handleFormSubmit(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = `<i class="fa-solid fa-spinner animate
 
             const payload = {
                 name: document.getElementById('fname').value,
