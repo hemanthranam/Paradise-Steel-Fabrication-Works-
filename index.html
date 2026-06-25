@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paradise Steel Fabrication Works | SPEED LIFT</title>
+    <title>Paradise Steel Fabrication Works | SPEED LIFT 200</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
                 <a href="#services" class="hover:text-blue-600 transition-colors">Services & AMC</a>
             </div>
             <button onclick="openModal('bookingModal')" class="hidden md:block bg-slate-900 hover:bg-blue-600 text-white font-medium px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                Get a Free Quote
+                Request Pricing / Enquire Now
             </button>
             <button class="md:hidden text-slate-800 focus:outline-none" onclick="toggleMobileMenu()">
                 <i class="fa-solid fa-bars text-2xl"></i>
@@ -52,7 +52,7 @@
             <a href="#highlights" onclick="toggleMobileMenu()" class="hover:text-blue-600">Features</a>
             <a href="#models" onclick="toggleMobileMenu()" class="hover:text-blue-600">Machinery</a>
             <a href="#services" onclick="toggleMobileMenu()" class="hover:text-blue-600">Services & AMC</a>
-            <button onclick="openModal('bookingModal'); toggleMobileMenu();" class="bg-slate-900 text-white px-6 py-3 rounded-xl shadow-md">Get a Free Quote</button>
+            <button onclick="openModal('bookingModal'); toggleMobileMenu();" class="bg-slate-900 text-white px-6 py-3 rounded-xl shadow-md">Request Pricing / Enquire Now</button>
         </div>
     </nav>
 
@@ -73,11 +73,11 @@
                 Elevate Construction & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Slash Labor Costs</span>
             </h2>
             <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-                Transport raw construction material safely up to 10 floors effortlessly. Built with highly durable components, branded electrical parts, and customizable power setups across India.
+                High-performance vertical material lifting systems engineered for modern construction efficiency.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
                 <button onclick="openModal('bookingModal')" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    Request Pricing & Spec Sheet
+                    Request Pricing / Enquire Now
                 </button>
                 <button onclick="scrollToSection('models')" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
                     View Models
@@ -111,21 +111,21 @@
                 <p class="text-slate-600 mt-3">Built completely from robust structural steel to tackle heavy-duty operations reliably.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="openServiceModal('Branded Electricals', 'Industrial-grade components and branded electronics selected specifically for long operational lifespans and minimized maintenance overhead.')">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center rounded-xl mb-6 text-xl">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Branded Electricals</h3>
                     <p class="text-slate-600 font-light leading-relaxed">Industrial-grade components and branded electronics selected specifically for long operational lifespans and minimized maintenance overhead.</p>
                 </div>
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="openServiceModal('Single / Three Phase', 'Highly adaptable power configurations, designed for low power consumption whether deployed at residential housing projects or commercial setups.')">
                     <div class="w-12 h-12 bg-indigo-100 text-indigo-600 flex items-center justify-center rounded-xl mb-6 text-xl">
                         <i class="fa-solid fa-plug"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Single / Three Phase</h3>
                     <p class="text-slate-600 font-light leading-relaxed">Highly adaptable power configurations, designed for low power consumption whether deployed at residential housing projects or commercial setups.</p>
                 </div>
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="openServiceModal('Up to 10 Floors Reach', 'Reliable, long-line vertical material handling. Effortlessly move sand, concrete, stones, bricks, and sanitary ware safely across multi-story sites.')">
                     <div class="w-12 h-12 bg-emerald-100 text-emerald-600 flex items-center justify-center rounded-xl mb-6 text-xl">
                         <i class="fa-solid fa-elevator"></i>
                     </div>
@@ -142,18 +142,18 @@
                 <span class="text-blue-600 font-semibold uppercase tracking-wider text-xs">About Paradise Steel</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight">Precision Engineering & Manufacturing Since 1989.</h2>
                 <p class="text-slate-600 font-light leading-relaxed">
-                    Operating from Madanapalle, Andhra Pradesh, India, Paradise Steel Fabrication Works is an elite manufacturer, supplier, and distributor of robust construction machinery.
+                    Operating from Madanapalle, India, Paradise Steel Fabrication Works is an elite manufacturer, supplier, and distributor of robust construction machinery.
                 </p>
                 <p class="text-slate-600 font-light leading-relaxed">
-                    We specialize in long-line vertical material transportation. Our SPEED LIFT units significantly decrease traditional project labor expenses by safely shifting heavy loads across structural sites ranging from independent houses to high-rise commercial malls.
+                    We specialize in long-line vertical material transportation. Our SPEED LIFT units significantly decrease traditional project labor expenses by safely shifting heavy loads across structural sites ranging from homes to high-rise commercial malls.
                 </p>
-                <button onclick="openModal('bookingModal')" class="inline-block bg-slate-900 hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-xl shadow-sm transition-all duration-300">
+                <button onclick="openModal('bookingModal', 'Custom Engineering Solutions')" class="inline-block bg-slate-900 hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-xl shadow-sm transition-all duration-300">
                     Enquire About Dealerships
                 </button>
             </div>
             <div class="relative">
                 <div class="absolute inset-0 bg-blue-100 rounded-3xl transform rotate-3 scale-95 opacity-50"></div>
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Precision Manufacturing" class="relative rounded-3xl shadow-xl w-full object-cover h-[450px]">
+                <img src="https://drive.google.com/uc?id=1cXTG1fXRHzt5EpyMCDGprhfyg6bcmu1I" alt="Precision Manufacturing" class="relative rounded-3xl shadow-xl w-full object-cover h-[450px]">
             </div>
         </div>
     </section>
@@ -165,16 +165,16 @@
                 <p class="text-slate-600 mt-3">Durable vertical lifting systems equipped with premium electronics, structural stability, and tailored electrical feeds.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openServiceModal('SPEED LIFT 250', 'Perfect for standard residential developments, independent houses, and mid-tier apartment projects. Designed for rapid on-site assembly and ultimate user safety.')">
                     <div class="p-8">
                         <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 mb-4">Flagship Model</span>
                         <h3 class="text-2xl font-extrabold text-slate-900 mb-2">SPEED LIFT 250</h3>
-                        <p class="text-slate-500 font-medium text-sm mb-6">Perfect for standard independent houses and mid-tier apartment projects.</p>
+                        <p class="text-slate-500 font-medium text-sm mb-6">Perfect for standard residential developments, independent houses, and mid-tier apartment projects.</p>
                         <div class="space-y-3 mb-8 text-sm text-slate-600">
                             <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Max Load:</strong> 250 kg</p>
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Reach:</strong> Multi-story residential</p>
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Power:</strong> Single / Three Phase compatible</p>
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Electronics:</strong> Premium branded</p>
+                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Reach:</strong> Multi-story</p>
+                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Power:</strong> Single / Three Phase</p>
+                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Electronics:</strong> Branded Electronics</p>
                         </div>
                     </div>
                     <div class="p-6 bg-slate-100 border-t border-slate-200">
@@ -183,16 +183,16 @@
                         </button>
                     </div>
                 </div>
-                <div class="bg-slate-900 text-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1">
+                <div class="bg-slate-900 text-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 cursor-pointer" onclick="openServiceModal('SPEED LIFT 500', 'Engineered strictly for large-scale commercial malls, high-rise residential towers, and multi-story sites requiring long-line continuous vertical shifts.')">
                     <div class="p-8">
                         <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-600 text-white mb-4">Heavy Duty</span>
                         <h3 class="text-2xl font-extrabold text-white mb-2">SPEED LIFT 500</h3>
-                        <p class="text-blue-200 font-medium text-sm mb-6">Engineered strictly for high-rise residential & continuous vertical shifts.</p>
+                        <p class="text-blue-200 font-medium text-sm mb-6">Engineered strictly for large-scale commercial malls, high-rise residential towers, and multi-story sites.</p>
                         <div class="space-y-3 mb-8 text-sm text-blue-100">
                             <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Max Load:</strong> 500 kg</p>
                             <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Reach:</strong> Up to 10 Floors</p>
-                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Power:</strong> Optimized 3 Phase feed</p>
-                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Electronics:</strong> Industrial premium</p>
+                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Power:</strong> Optimized 3 Phase</p>
+                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Electronics:</strong> Premium Electronics</p>
                         </div>
                     </div>
                     <div class="p-6 bg-slate-800 border-t border-slate-700">
@@ -212,13 +212,13 @@
                     <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800">All-India Support</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Budget-Friendly AMC & Machinery Maintenance</h2>
                     <p class="text-slate-600 font-light leading-relaxed">
-                        Our relationship doesn't end at delivery. We manage comprehensive equipment sales, rapid AMC servicing, and troubleshooting across all of India to guarantee zero project delays.
+                        Our relationship doesn't end at delivery. We manage comprehensive equipment sales and fast support anywhere in India. Enroll in our entirely budget-friendly AMC plans.
                     </p>
                     <div class="space-y-3 text-sm text-slate-700 font-medium">
                         <p><i class="fa-solid fa-shield-halved text-emerald-600 mr-3"></i> 24/7 Priority Issue Resolution</p>
                         <p><i class="fa-solid fa-screwdriver-wrench text-emerald-600 mr-3"></i> Rapid Certified Service Dispatch</p>
                     </div>
-                    <button onclick="openModal('bookingModal', 'AMC Plan Enrolment')" class="bg-slate-900 hover:bg-emerald-600 text-white font-medium px-8 py-4 rounded-xl shadow-md transition-all duration-300">
+                    <button onclick="openModal('bookingModal', 'AMC & Maintenance')" class="bg-slate-900 hover:bg-emerald-600 text-white font-medium px-8 py-4 rounded-xl shadow-md transition-all duration-300">
                         Enroll in AMC Plan
                     </button>
                 </div>
@@ -237,7 +237,7 @@
                     <span class="text-xl font-bold text-white tracking-tight">Paradise Steel Fabrication Works</span>
                 </div>
                 <p class="text-sm font-light max-w-md leading-relaxed text-slate-500">
-                    Revolutionizing construction material transportation. Saving builders time and labor costs since 1989 across India.
+                    Revolutionizing construction material transportation. Saving builders time and labor costs since 1989.
                 </p>
             </div>
             <div>
@@ -268,12 +268,28 @@
         </div>
     </footer>
 
+    <div id="serviceDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 border border-slate-100 flex flex-col relative">
+            <button onclick="closeModal('serviceDetailModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 focus:outline-none">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center rounded-xl mb-5 text-xl">
+                <i class="fa-solid fa-cogs"></i>
+            </div>
+            <h3 id="serviceDetailTitle" class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">Service Title</h3>
+            <p id="serviceDetailDesc" class="text-slate-600 font-light leading-relaxed mb-8">Service description goes here.</p>
+            <button onclick="closeModal('serviceDetailModal'); openModal('bookingModal');" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl shadow-lg transition-all">
+                Request Pricing / Enquire Now
+            </button>
+        </div>
+    </div>
+
     <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300">
         <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col max-h-[90vh]">
             <div class="px-8 py-6 border-b border-slate-50 flex justify-between items-center bg-slate-50/50">
                 <div>
                     <h3 class="text-xl font-bold text-slate-900 tracking-tight">Request Quote / Consultation</h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Submit details to receive our speed lift specifications.</p>
+                    <p class="text-xs text-slate-500 mt-0.5">Submit details to receive equipment specs & pricing.</p>
                 </div>
                 <button onclick="closeModal('bookingModal')" class="text-slate-400 hover:text-slate-600 focus:outline-none">
                     <i class="fa-solid fa-xmark text-xl"></i>
@@ -296,15 +312,16 @@
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">I am interested in</label>
                         <select id="finterest" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                            <option value="SPEED LIFT 250">SPEED LIFT 250 (Residential/Mid-tier)</option>
-                            <option value="SPEED LIFT 500">SPEED LIFT 500 (Commercial/Up to 10 Floors)</option>
-                            <option value="Dealership/Distributorship">Dealership / Distributorship Enquiries</option>
-                            <option value="AMC / Machinery Service">AMC Plan Enrolment / Servicing</option>
+                            <option value="SPEED LIFT 250">SPEED LIFT 250</option>
+                            <option value="SPEED LIFT 500">SPEED LIFT 500</option>
+                            <option value="AMC & Maintenance">AMC & Maintenance</option>
+                            <option value="Dealership Enquiries">Dealership Enquiries</option>
+                            <option value="Custom Engineering Solutions">Custom Engineering Solutions</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Project Description / Site Pincode</label>
-                        <textarea id="fdesc" rows="3" placeholder="Tell us about your building height, required power capacity, or special requests..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"></textarea>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Project Description / Details</label>
+                        <textarea id="fdesc" rows="3" placeholder="Tell us about building floors, customized setups or specific requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"></textarea>
                     </div>
                     <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl shadow-lg transition-all">
                         Send Request
@@ -321,7 +338,7 @@
             </div>
             <div>
                 <h4 class="text-xl font-extrabold text-slate-900 tracking-tight">Enquiry Successfully Captured!</h4>
-                <p class="text-sm text-slate-500 mt-2 leading-relaxed">Thank you for your interest. We have logged your enquiry as "New" and a representative will contact you shortly.</p>
+                <p class="text-sm text-slate-500 mt-2 leading-relaxed">Thank you for your interest. We have safely captured your enquiry. A representative will contact you shortly.</p>
             </div>
             <button onclick="closeModal('successModal')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition-all">
                 Understood
@@ -330,7 +347,7 @@
     </div>
 
     <script>
-        // Set the deployment endpoint string variable below
+        // REPLACE WITH YOUR ACTUAL GOOGLE APPS SCRIPT WEB APP URL AFTER DEPLOYMENT
         const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTswaXWRd2LyUJvWPhcViQPqSii90VGXAqTXLk2JmYRGvCFxUq3SDV5UQGJY90yzvoDg/exec";
 
         function toggleMobileMenu() {
@@ -343,6 +360,12 @@
             if(section) {
                 section.scrollIntoView({ behavior: 'smooth' });
             }
+        }
+
+        function openServiceModal(title, desc) {
+            document.getElementById('serviceDetailTitle').innerText = title;
+            document.getElementById('serviceDetailDesc').innerText = desc;
+            openModal('serviceDetailModal');
         }
 
         function openModal(modalId, presetModel="") {
@@ -372,6 +395,7 @@
             }
         }
 
+        // Form submission → Apps Script SPA Style no-reload
         async function handleFormSubmit(e) {
             e.preventDefault();
             
@@ -388,21 +412,18 @@
             };
 
             try {
-                // Updated deployment structure supporting text/plain headers and CORS
                 await fetch(APPS_SCRIPT_URL, {
-                    method: "POST",
+                    method: 'POST',
+                    mode: 'no-cors',
                     headers: {
-                        "Content-Type": "text/plain;charset=utf-8"
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(payload)
                 });
-
                 resetForm();
                 closeModal('bookingModal');
                 openModal('successModal');
-                
             } catch(err) {
-                console.error("Submission error:", err);
                 resetForm();
                 closeModal('bookingModal');
                 openModal('successModal');
