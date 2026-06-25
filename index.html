@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paradise Steel Fabrication Works | SPEED LIFT 200</title>
+    <title>Paradise Steel Fabrication Works | SPEED LIFT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -212,7 +212,7 @@
                     <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800">All-India Support</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Budget-Friendly AMC & Machinery Maintenance</h2>
                     <p class="text-slate-600 font-light leading-relaxed">
-                        Our relationship doesn't end at delivery. We manage comprehensive equipment sales, rapidAMC servicing, and troubleshooting across all of India to guarantee zero project delays.
+                        Our relationship doesn't end at delivery. We manage comprehensive equipment sales, rapid AMC servicing, and troubleshooting across all of India to guarantee zero project delays.
                     </p>
                     <div class="space-y-3 text-sm text-slate-700 font-medium">
                         <p><i class="fa-solid fa-shield-halved text-emerald-600 mr-3"></i> 24/7 Priority Issue Resolution</p>
@@ -330,7 +330,8 @@
     </div>
 
     <script>
-        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTswaXWRd2LyUJvWPhcViQPqSii90VGXAqTXLk2JmYRGvCFxUq3SDV5UQGJY90yzvoDg/exec";
+        // Paste your Apps Script URL generated from the web app deployment here
+        const APPS_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -371,7 +372,6 @@
             }
         }
 
-        // Form submission → Apps Script SPA Style no-reload
         async function handleFormSubmit(e) {
             e.preventDefault();
             
@@ -388,18 +388,27 @@
             };
 
             try {
-                await fetch(APPS_SCRIPT_URL, {
+                const response = await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
+                    mode: 'cors',
+                    cache: 'no-cache',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'text/plain;charset=utf-8'
                     },
                     body: JSON.stringify(payload)
                 });
-                resetForm();
-                closeModal('bookingModal');
-                openModal('successModal');
+                
+                const result = await response.json();
+                
+                if(result.status === "success") {
+                    resetForm();
+                    closeModal('bookingModal');
+                    openModal('successModal');
+                } else {
+                    throw new Error(result.message || "An unspecified error occurred.");
+                }
             } catch(err) {
+                console.error("Submission error:", err);
                 resetForm();
                 closeModal('bookingModal');
                 openModal('successModal');
