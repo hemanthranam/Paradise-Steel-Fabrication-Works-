@@ -223,7 +223,7 @@
                     </button>
                 </div>
                 <div>
-                    <img src="https://unsplash.com/photos/white-and-black-samsung-signage-aielvGxZB0g" alt="Machinery Service and Maintenance" class="rounded-2xl shadow-lg object-cover w-full h-[350px]">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4d5761882c2?auto=format&fit=crop&w=600&q=80" alt="Machinery Service and Maintenance" class="rounded-2xl shadow-lg object-cover w-full h-[350px]">
                 </div>
             </div>
         </div>
@@ -330,7 +330,6 @@
     </div>
 
     <script>
-        // REPLACE WITH YOUR ACTUAL GOOGLE APPS SCRIPT WEB APP URL AFTER DEPLOYMENT
         const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTswaXWRd2LyUJvWPhcViQPqSii90VGXAqTXLk2JmYRGvCFxUq3SDV5UQGJY90yzvoDg/exec";
 
         function toggleMobileMenu() {
@@ -373,15 +372,12 @@
         }
 
         // Form submission → Apps Script SPA Style no-reload
-        <script>
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTswaXWRd2LyUJvWPhcViQPqSii90VGXAqTXLk2JmYRGvCFxUq3SDV5UQGJY90yzvoDg/exec";
-
-async function handleFormSubmit(e) {
-    e.preventDefault();
-
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.innerHTML = `<i class="fa-solid fa-spinner animate
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin mr-2"></i> Submitting...`;
 
             const payload = {
                 name: document.getElementById('fname').value,
@@ -391,29 +387,26 @@ async function handleFormSubmit(e) {
                 desc: document.getElementById('fdesc').value
             };
 
-            // Making cross-origin POST request or using JSONP/Form submission fallback
-            // In pure HTML/GAS environment, CORS might be blocked if not handled. Using standard endpoint directly
-            fetch(APPS_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Used so we don't get blocked by GAS CORS limitations on simple web apps
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            }).then(() => {
-                // Since no-cors hides response status, we assume successful callback.
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
                 resetForm();
                 closeModal('bookingModal');
                 openModal('successModal');
-            }).catch(err => {
-                // Still fallback to success/open on local/mock deployment
+            } catch(err) {
                 resetForm();
                 closeModal('bookingModal');
                 openModal('successModal');
-            }).finally(() => {
+            } finally {
                 btn.disabled = false;
                 btn.innerHTML = `Send Request`;
-            });
+            }
         }
 
         function resetForm() {
