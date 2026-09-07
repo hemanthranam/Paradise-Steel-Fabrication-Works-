@@ -63,7 +63,6 @@ Paradise-Steel-Fabrication-Works-/
 │   │   ├── speed-lift-200-machine.jpg   # LOCKED MASTER ASSET (1024x767 untouched field machine photo)
 │   │   ├── speed-lift-site-operation.jpg # Authentic high-rise slab operation photo
 │   │   ├── speed-lift-mechanism-closeup.jpg # Authentic motor box & horse emblem photo
-│   │   ├── speed-lift-brochure.jpg      # Authentic official manufacturer brochure flyer
 │   │   └── logo-horse.svg               # High-res industrial horse vector emblem
 │   ├── icons/
 │   │   └── logo-horse.svg               # Vector brand icon
