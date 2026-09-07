@@ -1,444 +1,643 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paradise Steel Fabrication Works | SPEED LIFT 200</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.45);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradise Steel Fabrication Works | SPEED LIFT Construction Hoists</title>
+  <meta name="description" content="Manufacturers of SPEED LIFT vertical material lifting systems in Madanapalle since 1989. Save labor costs and project time with heavy-duty construction lifts.">
+  <link rel="canonical" href="https://hemanthranam.github.io/Paradise-Steel-Fabrication-Works-/">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paradise Steel Fabrication Works | SPEED LIFT 200">
+  <meta property="og:description" content="Industrial vertical material handling machinery engineered in Madanapalle, AP. Saves up to 5 laborers per day on multi-story construction sites.">
+  <meta property="og:url" content="https://hemanthranam.github.io/Paradise-Steel-Fabrication-Works-/">
+  <meta property="og:image" content="assets/images/speed-lift-200-machine.jpg">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-horse.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Industrial Design System -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSON-LD Structured Data (Verified Manufacturer) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Paradise Steel Fabrication Works",
+    "image": "https://hemanthranam.github.io/Paradise-Steel-Fabrication-Works-/assets/images/speed-lift-200-machine.jpg",
+    "telephone": "+91-9440585329",
+    "email": "manager.psfw@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot No. E-13, Industrial Development Estate",
+      "addressLocality": "Madanapalle",
+      "addressRegion": "Andhra Pradesh",
+      "postalCode": "517325",
+      "addressCountry": "IN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "R. Rama Krishna"
+    },
+    "foundingDate": "1989",
+    "url": "https://hemanthranam.github.io/Paradise-Steel-Fabrication-Works-/",
+    "priceRange": "$$"
+  }
+  </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+<body>
 
-    <nav class="glassmorphism sticky top-0 z-50 w-full px-6 py-4 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToSection('home')">
-                <img width="42" height="42" src="https://img.icons8.com/external-edtim-solid-edtim/50/external-Horse-fire-horses-edtim-solid-edtim-2.png" alt="Paradise Logo" class="object-contain">
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight text-slate-900 leading-none">Paradise Steel</h1>
-                    <span class="text-xs font-medium tracking-wider text-blue-600 uppercase">Fabrication Works</span>
-                </div>
-            </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
-                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
-                <a href="#highlights" class="hover:text-blue-600 transition-colors">Features</a>
-                <a href="#models" class="hover:text-blue-600 transition-colors">Machinery</a>
-                <a href="#services" class="hover:text-blue-600 transition-colors">Services & AMC</a>
-            </div>
-            <button onclick="openModal('bookingModal')" class="hidden md:block bg-slate-900 hover:bg-blue-600 text-white font-medium px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                Request Pricing / Enquire Now
-            </button>
-            <button class="md:hidden text-slate-800 focus:outline-none" onclick="toggleMobileMenu()">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-200 flex flex-col space-y-4 pb-2 text-center font-medium text-slate-700">
-            <a href="#home" onclick="toggleMobileMenu()" class="hover:text-blue-600">Home</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="hover:text-blue-600">About</a>
-            <a href="#highlights" onclick="toggleMobileMenu()" class="hover:text-blue-600">Features</a>
-            <a href="#models" onclick="toggleMobileMenu()" class="hover:text-blue-600">Machinery</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="hover:text-blue-600">Services & AMC</a>
-            <button onclick="openModal('bookingModal'); toggleMobileMenu();" class="bg-slate-900 text-white px-6 py-3 rounded-xl shadow-md">Request Pricing / Enquire Now</button>
-        </div>
-    </nav>
+  <!-- TOP UTILITY BAR -->
+  <header class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-links">
+        <span><i class="fa-solid fa-location-dot"></i> Plot No. E-13, Industrial Estate, Madanapalle, AP</span>
+        <span class="d-none-sm"><i class="fa-solid fa-industry"></i> Established 1989</span>
+      </div>
+      <div class="topbar-links">
+        <a href="tel:+919440585329"><i class="fa-solid fa-phone"></i> +91 94405 85329</a>
+        <a href="tel:+919515718708"><i class="fa-solid fa-phone"></i> +91 95157 18708</a>
+        <a href="https://wa.me/917675815245" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-success"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </header>
 
-    <section id="home" class="relative pt-24 pb-20 px-6 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-slate-50">
-        <div class="absolute inset-0 z-0 opacity-30">
-            <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-300 rounded-full filter blur-3xl"></div>
-            <div class="absolute top-60 -left-40 w-96 h-96 bg-indigo-200 rounded-full filter blur-3xl"></div>
+  <!-- MAIN NAVIGATION -->
+  <nav class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Paradise Steel Fabrication Works Home">
+        <img src="assets/icons/logo-horse.svg" alt="Paradise Steel Emblem" width="44" height="44">
+        <div class="brand-text">
+          <span class="brand-title">Paradise Steel</span>
+          <span class="brand-subtitle">Fabrication Works</span>
         </div>
-        <div class="max-w-6xl mx-auto relative z-10 text-center space-y-8">
-            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 uppercase tracking-wider border border-blue-200">
-                <span class="relative flex h-2 w-2 mr-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                Trusted Heavy Machinery Manufacturer Since 1989
-            </span>
-            <h2 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 max-w-4xl mx-auto leading-tight md:leading-none">
-                Elevate Construction & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Slash Labor Costs</span>
-            </h2>
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-                High-performance vertical material lifting systems engineered for modern construction efficiency.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-                <button onclick="openModal('bookingModal')" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    Request Pricing / Enquire Now
-                </button>
-                <button onclick="scrollToSection('models')" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-                    View Models
-                </button>
-            </div>
-        </div>
-        <div class="max-w-5xl mx-auto mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
-            <div class="glassmorphism p-6 rounded-2xl text-center border border-white shadow-sm">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-blue-600">500kg</h3>
-                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-1">Max Load Capacity</p>
-            </div>
-            <div class="glassmorphism p-6 rounded-2xl text-center border border-white shadow-sm">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">10 Floors</h3>
-                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-1">Max Long Line Reach</p>
-            </div>
-            <div class="glassmorphism p-6 rounded-2xl text-center border border-white shadow-sm">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-indigo-600">5000+</h3>
-                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-1">Satisfied Customers</p>
-            </div>
-            <div class="glassmorphism p-6 rounded-2xl text-center border border-white shadow-sm">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">1989</h3>
-                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-1">Established</p>
-            </div>
-        </div>
-    </section>
+      </a>
 
-    <section id="highlights" class="py-20 px-6 bg-white border-y border-slate-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Engineering Highlights</h2>
-                <p class="text-slate-600 mt-3">Built completely from robust structural steel to tackle heavy-duty operations reliably.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="openServiceModal('Branded Electricals', 'Industrial-grade components and branded electronics selected specifically for long operational lifespans and minimized maintenance overhead.')">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center rounded-xl mb-6 text-xl">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Branded Electricals</h3>
-                    <p class="text-slate-600 font-light leading-relaxed">Industrial-grade components and branded electronics selected specifically for long operational lifespans and minimized maintenance overhead.</p>
-                </div>
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="openServiceModal('Single / Three Phase', 'Highly adaptable power configurations, designed for low power consumption whether deployed at residential housing projects or commercial setups.')">
-                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 flex items-center justify-center rounded-xl mb-6 text-xl">
-                        <i class="fa-solid fa-plug"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Single / Three Phase</h3>
-                    <p class="text-slate-600 font-light leading-relaxed">Highly adaptable power configurations, designed for low power consumption whether deployed at residential housing projects or commercial setups.</p>
-                </div>
-                <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer" onclick="openServiceModal('Up to 10 Floors Reach', 'Reliable, long-line vertical material handling. Effortlessly move sand, concrete, stones, bricks, and sanitary ware safely across multi-story sites.')">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 flex items-center justify-center rounded-xl mb-6 text-xl">
-                        <i class="fa-solid fa-elevator"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Up to 10 Floors Reach</h3>
-                    <p class="text-slate-600 font-light leading-relaxed">Reliable, long-line vertical material handling. Effortlessly move sand, concrete, stones, bricks, and sanitary ware safely across multi-story sites.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="capabilities.html" class="nav-link">Speed Lift Series</a>
+        <a href="about.html" class="nav-link">About Company</a>
+        <a href="services.html" class="nav-link">Services & AMC</a>
+        <a href="projects.html" class="nav-link">Field Operations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
 
-    <section id="about" class="py-20 px-6 bg-slate-50">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="text-blue-600 font-semibold uppercase tracking-wider text-xs">About Paradise Steel</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight">Precision Engineering & Manufacturing Since 1989.</h2>
-                <p class="text-slate-600 font-light leading-relaxed">
-                    Operating from Madanapalle, India, Paradise Steel Fabrication Works is an elite manufacturer, supplier, and distributor of robust construction machinery.
-                </p>
-                <p class="text-slate-600 font-light leading-relaxed">
-                    We specialize in long-line vertical material transportation. Our SPEED LIFT units significantly decrease traditional project labor expenses by safely shifting heavy loads across structural sites ranging from homes to high-rise commercial malls.
-                </p>
-                <button onclick="openModal('bookingModal', 'Custom Engineering Solutions')" class="inline-block bg-slate-900 hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-xl shadow-sm transition-all duration-300">
-                    Enquire About Dealerships
-                </button>
-            </div>
-            <div class="relative">
-                <div class="absolute inset-0 bg-blue-100 rounded-3xl transform rotate-3 scale-95 opacity-50"></div>
-                <img src="https://drive.google.com/uc?id=1cXTG1fXRHzt5EpyMCDGprhfyg6bcmu1I" alt="Precision Manufacturing" class="relative rounded-3xl shadow-xl w-full object-cover h-[450px]">
-            </div>
-        </div>
-    </section>
-
-    <section id="models" class="py-20 px-6 bg-white border-t border-slate-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">SPEED LIFT Series Models</h2>
-                <p class="text-slate-600 mt-3">Durable vertical lifting systems equipped with premium electronics, structural stability, and tailored electrical feeds.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openServiceModal('SPEED LIFT 250', 'Perfect for standard residential developments, independent houses, and mid-tier apartment projects. Designed for rapid on-site assembly and ultimate user safety.')">
-                    <div class="p-8">
-                        <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 mb-4">Flagship Model</span>
-                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">SPEED LIFT 250</h3>
-                        <p class="text-slate-500 font-medium text-sm mb-6">Perfect for standard residential developments, independent houses, and mid-tier apartment projects.</p>
-                        <div class="space-y-3 mb-8 text-sm text-slate-600">
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Max Load:</strong> 250 kg</p>
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Reach:</strong> Multi-story</p>
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Power:</strong> Single / Three Phase</p>
-                            <p><i class="fa-solid fa-check text-blue-600 mr-2"></i><strong>Electronics:</strong> Branded Electronics</p>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-100 border-t border-slate-200">
-                        <button onclick="openModal('bookingModal', 'SPEED LIFT 250')" class="w-full bg-white hover:bg-slate-200 text-slate-800 font-semibold py-3.5 rounded-xl border border-slate-300 shadow-sm transition-all">
-                            Get Spec Sheet & Quote
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-slate-900 text-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 cursor-pointer" onclick="openServiceModal('SPEED LIFT 500', 'Engineered strictly for large-scale commercial malls, high-rise residential towers, and multi-story sites requiring long-line continuous vertical shifts.')">
-                    <div class="p-8">
-                        <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-600 text-white mb-4">Heavy Duty</span>
-                        <h3 class="text-2xl font-extrabold text-white mb-2">SPEED LIFT 500</h3>
-                        <p class="text-blue-200 font-medium text-sm mb-6">Engineered strictly for large-scale commercial malls, high-rise residential towers, and multi-story sites.</p>
-                        <div class="space-y-3 mb-8 text-sm text-blue-100">
-                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Max Load:</strong> 500 kg</p>
-                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Reach:</strong> Up to 10 Floors</p>
-                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Power:</strong> Optimized 3 Phase</p>
-                            <p><i class="fa-solid fa-check text-blue-400 mr-2"></i><strong>Electronics:</strong> Premium Electronics</p>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-slate-800 border-t border-slate-700">
-                        <button onclick="openModal('bookingModal', 'SPEED LIFT 500')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-xl shadow-md transition-all">
-                            Get Spec Sheet & Quote
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 px-6 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-5xl mx-auto glassmorphism p-10 md:p-16 rounded-3xl border border-slate-200 shadow-sm">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800">All-India Support</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Budget-Friendly AMC & Machinery Maintenance</h2>
-                    <p class="text-slate-600 font-light leading-relaxed">
-                        Our relationship doesn't end at delivery. We manage comprehensive equipment sales and fast support anywhere in India. Enroll in our entirely budget-friendly AMC plans.
-                    </p>
-                    <div class="space-y-3 text-sm text-slate-700 font-medium">
-                        <p><i class="fa-solid fa-shield-halved text-emerald-600 mr-3"></i> 24/7 Priority Issue Resolution</p>
-                        <p><i class="fa-solid fa-screwdriver-wrench text-emerald-600 mr-3"></i> Rapid Certified Service Dispatch</p>
-                    </div>
-                    <button onclick="openModal('bookingModal', 'AMC & Maintenance')" class="bg-slate-900 hover:bg-emerald-600 text-white font-medium px-8 py-4 rounded-xl shadow-md transition-all duration-300">
-                        Enroll in AMC Plan
-                    </button>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4d5761882c2?auto=format&fit=crop&w=600&q=80" alt="Machinery Service and Maintenance" class="rounded-2xl shadow-lg object-cover w-full h-[350px]">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div class="space-y-4 md:col-span-2">
-                <div class="flex items-center space-x-3">
-                    <img width="36" height="36" src="https://img.icons8.com/external-edtim-solid-edtim/50/external-Horse-fire-horses-edtim-solid-edtim-2.png" alt="Logo">
-                    <span class="text-xl font-bold text-white tracking-tight">Paradise Steel Fabrication Works</span>
-                </div>
-                <p class="text-sm font-light max-w-md leading-relaxed text-slate-500">
-                    Revolutionizing construction material transportation. Saving builders time and labor costs since 1989.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm font-light">
-                    <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
-                    <li><a href="#models" class="hover:text-white transition-colors">SPEED LIFT Models</a></li>
-                    <li><a href="#services" class="hover:text-white transition-colors">AMC & Maintenance</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Contact Info</h4>
-                <ul class="space-y-2 text-sm font-light">
-                    <li><i class="fa-solid fa-envelope mr-2 text-slate-500"></i> manager.psfw@gmail.com</li>
-                    <li><i class="fa-solid fa-phone mr-2 text-slate-500"></i> +91 94405 85329</li>
-                    <li><i class="fa-solid fa-phone mr-2 text-slate-500"></i> +91 95157 18708</li>
-                    <li class="pt-2 text-xs text-slate-500">E-13, Industrial Estate, Madanapalle, Andhra Pradesh, India.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs font-light space-y-4 md:space-y-0">
-            <span>&copy; 2026 Paradise Steel Fabrication Works. All rights reserved.</span>
-            <div class="flex space-x-6">
-                <span class="hover:text-white cursor-pointer">Privacy Policy</span>
-                <span class="hover:text-white cursor-pointer">Terms of Service</span>
-            </div>
-        </div>
-    </footer>
-
-    <div id="serviceDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300">
-        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 border border-slate-100 flex flex-col relative">
-            <button onclick="closeModal('serviceDetailModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 focus:outline-none">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center rounded-xl mb-5 text-xl">
-                <i class="fa-solid fa-cogs"></i>
-            </div>
-            <h3 id="serviceDetailTitle" class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">Service Title</h3>
-            <p id="serviceDetailDesc" class="text-slate-600 font-light leading-relaxed mb-8">Service description goes here.</p>
-            <button onclick="closeModal('serviceDetailModal'); openModal('bookingModal');" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl shadow-lg transition-all">
-                Request Pricing / Enquire Now
-            </button>
-        </div>
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary" onclick="openModal('quoteModal')">
+          <i class="fa-solid fa-file-invoice"></i> Request a Quote
+        </button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
 
-    <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300">
-        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col max-h-[90vh]">
-            <div class="px-8 py-6 border-b border-slate-50 flex justify-between items-center bg-slate-50/50">
-                <div>
-                    <h3 class="text-xl font-bold text-slate-900 tracking-tight">Request Quote / Consultation</h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Submit details to receive equipment specs & pricing.</p>
-                </div>
-                <button onclick="closeModal('bookingModal')" class="text-slate-400 hover:text-slate-600 focus:outline-none">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-            <div class="px-8 py-6 flex-1 overflow-y-auto space-y-4">
-                <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Full Name</label>
-                        <input type="text" id="fname" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Phone Number</label>
-                        <input type="tel" id="fphone" required placeholder="+91..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email Address</label>
-                        <input type="email" id="femail" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">I am interested in</label>
-                        <select id="finterest" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                            <option value="SPEED LIFT 250">SPEED LIFT 250</option>
-                            <option value="SPEED LIFT 500">SPEED LIFT 500</option>
-                            <option value="AMC & Maintenance">AMC & Maintenance</option>
-                            <option value="Dealership Enquiries">Dealership Enquiries</option>
-                            <option value="Custom Engineering Solutions">Custom Engineering Solutions</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Project Description / Details</label>
-                        <textarea id="fdesc" rows="3" placeholder="Tell us about building floors, customized setups or specific requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl shadow-lg transition-all">
-                        Send Request
-                    </button>
-                </form>
-            </div>
-        </div>
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="capabilities.html" class="nav-link">Speed Lift Series</a>
+      <a href="about.html" class="nav-link">About Company</a>
+      <a href="services.html" class="nav-link">Services & AMC</a>
+      <a href="projects.html" class="nav-link">Field Operations</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <button type="button" class="btn btn-primary btn-block" onclick="openModal('quoteModal')">
+        <i class="fa-solid fa-file-invoice"></i> Request a Quote
+      </button>
     </div>
+  </nav>
 
-    <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300">
-        <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 text-center space-y-4 border border-slate-100">
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 flex items-center justify-center rounded-2xl mx-auto text-2xl">
-                <i class="fa-solid fa-circle-check"></i>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-tag badge-dark">
+          <i class="fa-solid fa-shield-halved"></i> Precision Engineering Since 1989 • Madanapalle, AP
+        </div>
+        <h1 class="hero-title">
+          Cut High Labor Costs with <span class="highlight">SPEED LIFT 200</span> Material Hoists.
+        </h1>
+        <p class="hero-desc">
+          Heavy-duty structural vertical lifting machinery designed for building contractors and civil construction projects. Engineered to eliminate manual material carrying, increase floor cycle speeds, and save up to 5 laborers daily.
+        </p>
+        <div class="hero-ctas">
+          <button type="button" class="btn btn-primary btn-lg" onclick="openModal('quoteModal', 'SPEED LIFT 200')">
+            <i class="fa-solid fa-calculator"></i> Request a Quote
+          </button>
+          <a href="https://wa.me/917675815245?text=Hello%20Paradise%20Steel%2C%20I%20am%20interested%20in%20SPEED%20LIFT%20200%20pricing%20and%20specifications." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+          </a>
+          <a href="assets/images/speed-lift-brochure.jpg" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">
+            <i class="fa-solid fa-file-lines"></i> View Brochure
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>1-Year Motor Replacement Warranty</span>
+          </div>
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Single / Three Phase Compatible</span>
+          </div>
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>360° Slew Unloading</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MASTER MACHINE IMAGE FRAME (LOCKED MASTER ASSET) -->
+      <div class="hero-machine-frame">
+        <img src="assets/images/speed-lift-200-machine.jpg" alt="SPEED LIFT 150/200 Construction Material Hoist in Field Operation" width="1024" height="767" loading="eager">
+        <div class="machine-badge">
+          <div>
+            <div class="machine-badge-title">SPEED LIFT 150 / 200 In Operation</div>
+            <div class="text-dim" style="font-size: 0.75rem;">Verified field setup at active construction site</div>
+          </div>
+          <span class="badge-tag badge-dark" style="font-size: 0.7rem;">Field Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT COUNTERS BAR -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">200 kg</div>
+        <div class="stat-label">Rated Lifting Load</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">100 ft</div>
+        <div class="stat-label">Standard Lifting Height</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">70 ft/min</div>
+        <div class="stat-label">Vertical Hoist Speed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">1989</div>
+        <div class="stat-label">Established in AP</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SYSTEM / MACHINERY MODELS -->
+  <section class="section" id="models">
+    <div class="container">
+      <div class="section-heading">
+        <span class="badge-tag">Verified Equipment Lineup</span>
+        <h2>SPEED LIFT Series Machinery</h2>
+        <p>Manufactured entirely from heavy-gauge structural steel with branded electrical drives and precision gear reduction for zero-maintenance vertical lifting.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- SPEED LIFT 150 -->
+        <div class="product-card">
+          <div class="product-card-header">
+            <h3 class="product-title">SPEED LIFT 150</h3>
+            <p class="product-subtitle">Lightweight, agile hoist for independent residential villas and G+2 structures.</p>
+          </div>
+          <div class="product-card-body">
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="spec-key">Lifting Capacity:</span>
+                <span class="spec-val">150 kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Working Height:</span>
+                <span class="spec-val">Up to 60 ft</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Rotation:</span>
+                <span class="spec-val">360° Radial Boom</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Power Phase:</span>
+                <span class="spec-val">Single Phase (220V)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Drive Mechanism:</span>
+                <span class="spec-val">Heavy duty electric motor</span>
+              </div>
             </div>
-            <div>
-                <h4 class="text-xl font-extrabold text-slate-900 tracking-tight">Enquiry Successfully Captured!</h4>
-                <p class="text-sm text-slate-500 mt-2 leading-relaxed">Thank you for your interest. We have safely captured your enquiry. A representative will contact you shortly.</p>
-            </div>
-            <button onclick="closeModal('successModal')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition-all">
-                Understood
+          </div>
+          <div class="product-card-footer">
+            <button type="button" class="btn btn-outline btn-block" onclick="openModal('quoteModal', 'SPEED LIFT 150')">
+              Request Spec & Price
             </button>
+          </div>
         </div>
+
+        <!-- SPEED LIFT 200 (FLAGSHIP MODEL VERIFIED FROM BROCHURE) -->
+        <div class="product-card featured">
+          <span class="product-badge-ribbon">Standard Flagship</span>
+          <div class="product-card-header">
+            <h3 class="product-title">SPEED LIFT 200</h3>
+            <p class="product-subtitle">The commercial workhorse. Highest verified fuel/power efficiency across multi-story sites.</p>
+          </div>
+          <div class="product-card-body">
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="spec-key">Lifting Load:</span>
+                <span class="spec-val" style="color: #B45309;">200 kgs (Verified)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Lifting Height:</span>
+                <span class="spec-val">100 fts (Extendable to 10 Floors)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Lifting Speed:</span>
+                <span class="spec-val">70 fts/min</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Unloading Area:</span>
+                <span class="spec-val">360 Degrees</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Machine Weight:</span>
+                <span class="spec-val">155 Kgs Approx.</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Motor Capacity:</span>
+                <span class="spec-val">1.5 HP (1-Yr Warranty)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Power Phase:</span>
+                <span class="spec-val">Single / Three Phase</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-footer">
+            <button type="button" class="btn btn-primary btn-block" onclick="openModal('quoteModal', 'SPEED LIFT 200')">
+              <i class="fa-solid fa-file-invoice"></i> Get Quotation & Brochure
+            </button>
+          </div>
+        </div>
+
+        <!-- SPEED LIFT 500 -->
+        <div class="product-card">
+          <div class="product-card-header">
+            <h3 class="product-title">SPEED LIFT 500</h3>
+            <p class="product-subtitle">Commercial & industrial grade hoist for large apartments, malls, and high-load cycles.</p>
+          </div>
+          <div class="product-card-body">
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="spec-key">Lifting Capacity:</span>
+                <span class="spec-val">500 kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Working Height:</span>
+                <span class="spec-val">Up to 10 Floors</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Rotation:</span>
+                <span class="spec-val">360° Slew with Lock</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Power Phase:</span>
+                <span class="spec-val">Three Phase (415V)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Framework:</span>
+                <span class="spec-val">Reinforced Structural Steel</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-footer">
+            <button type="button" class="btn btn-outline btn-block" onclick="openModal('quoteModal', 'SPEED LIFT 500')">
+              Request Spec & Price
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ROI / LABOR SAVING CALCULATOR -->
+  <section class="section section-dark industrial-grid-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="badge-tag badge-dark">Direct Economic Impact</span>
+        <h2>Site Labor Cost & ROI Calculator</h2>
+        <p>The SPEED LIFT 200 is engineered to save an average of 5 laborers per day on multi-story building sites. Use the calculator below to estimate your exact project savings.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Laborers Replaced by Hoist:</span>
+              <strong id="calcLaborersVal">5</strong>
+            </div>
+            <input type="range" class="calc-slider" id="calcLaborers" min="2" max="12" value="5" step="1">
+            <span style="font-size: 0.75rem; color: #64748B;">Brochure benchmark: Saves 5 laborers per day</span>
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Daily Labor Wage (₹):</span>
+              <strong id="calcDailyWageVal">₹600</strong>
+            </div>
+            <input type="range" class="calc-slider" id="calcDailyWage" min="400" max="1200" value="600" step="50">
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Working Days per Month:</span>
+              <strong id="calcWorkingDaysVal">26 Days</strong>
+            </div>
+            <input type="range" class="calc-slider" id="calcWorkingDays" min="15" max="30" value="26" step="1">
+          </div>
+        </div>
+
+        <div class="calc-results-box">
+          <div class="calc-result-item">
+            <span class="calc-result-title">Monthly Labor Cost Saved:</span>
+            <div class="calc-result-number" id="calcMonthlySavings">₹78,000</div>
+          </div>
+          <div class="calc-result-item">
+            <span class="calc-result-title">Annual Labor Cost Saved:</span>
+            <div class="calc-result-number" style="font-size: 1.85rem; color: #FBBF24;" id="calcAnnualSavings">₹9,36,000</div>
+          </div>
+          <div class="calc-result-item">
+            <span class="calc-result-title">Estimated Machine Payback Period:</span>
+            <div class="calc-result-number" style="font-size: 1.5rem; color: #34D399;" id="calcPaybackDays">39 Days</div>
+            <span style="font-size: 0.75rem; color: #94A3B8;">Full equipment investment recovered within the first project phase!</span>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="openModal('quoteModal', 'SPEED LIFT 200')">
+            <i class="fa-solid fa-handshake"></i> Lock In Equipment Quotation
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHENTIC FIELD OPERATIONS GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-heading">
+        <span class="badge-tag">Real Sites • Real Results</span>
+        <h2>Verified On-Site Performance</h2>
+        <p>Explore real job site imagery showing the SPEED LIFT machinery handling concrete, sand, bricks, and structural materials across building terraces.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/speed-lift-200-machine.jpg" alt="SPEED LIFT 150/200 on rooftop overlooking valley" loading="lazy">
+          <div class="gallery-caption">Rooftop Slab Mount with 360° Slew Reach</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/speed-lift-site-operation.jpg" alt="Construction crane hoist moving concrete bucket on high rise" loading="lazy">
+          <div class="gallery-caption">High-Rise Vertical Lift with Heavy Bucket Attachment</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/speed-lift-mechanism-closeup.jpg" alt="SPEED LIFT hoist motor mechanism and control box" loading="lazy">
+          <div class="gallery-caption">Industrial Motor Enclosure & Structural Framework</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING HIGHLIGHTS -->
+  <section class="section section-dark industrial-grid-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="badge-tag badge-dark">Built for Rigorous Construction</span>
+        <h2>Core Machinery Highlights</h2>
+        <p>Direct from our manufacturing workshop in Industrial Estate, Madanapalle.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card" style="background: #1E293B; border-color: #334155;">
+          <div class="feature-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="feature-title" style="color: #FFFFFF;">Branded Electricals</h3>
+          <p style="color: #CBD5E1;">Fitted with high-torque 1.5 HP electric motors and precision electrical panels configured for single or three-phase power feeds.</p>
+        </div>
+
+        <div class="feature-card" style="background: #1E293B; border-color: #334155;">
+          <div class="feature-icon">
+            <i class="fa-solid fa-arrows-spin"></i>
+          </div>
+          <h3 class="feature-title" style="color: #FFFFFF;">360° Unloading Radius</h3>
+          <p style="color: #CBD5E1;">The counterbalanced boom allows operators to rotate the suspended bucket 360 degrees directly onto the slab with zero edge danger.</p>
+        </div>
+
+        <div class="feature-card" style="background: #1E293B; border-color: #334155;">
+          <div class="feature-icon">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h3 class="feature-title" style="color: #FFFFFF;">1-Year Replacement Warranty</h3>
+          <p style="color: #CBD5E1;">Full manufacturer warranty on motor damage with immediate replacement support, backed by regular site health checkups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE MODAL -->
+  <div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 id="quoteModalTitle" style="font-size: 1.25rem;">Request Equipment Quotation</h3>
+          <p style="font-size: 0.8rem; margin: 0;">Fill in project details for direct manufacturer pricing.</p>
+        </div>
+        <button type="button" class="modal-close" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="leadForm">
+          <!-- Honeypot field for bot detection -->
+          <input type="text" id="leadHoneypot" style="display: none;" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="leadName">Full Name *</label>
+              <input type="text" class="form-control" id="leadName" required placeholder="e.g. Ramesh Reddy">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="leadPhone">Phone Number *</label>
+              <input type="tel" class="form-control" id="leadPhone" required placeholder="10-digit mobile number">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="leadEmail">Email Address</label>
+              <input type="email" class="form-control" id="leadEmail" placeholder="yourname@gmail.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="leadModel">Interested Model / Service *</label>
+              <select class="form-control" id="leadModel" required>
+                <option value="SPEED LIFT 200">SPEED LIFT 200 (Flagship 200kg / 100ft)</option>
+                <option value="SPEED LIFT 150">SPEED LIFT 150 (Residential / 150kg)</option>
+                <option value="SPEED LIFT 500">SPEED LIFT 500 (Commercial 500kg)</option>
+                <option value="AMC & Maintenance">AMC & Machinery Maintenance</option>
+                <option value="Dealership Enquiry">Dealership / Distributorship</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="leadLocation">Site Location / City</label>
+              <input type="text" class="form-control" id="leadLocation" placeholder="e.g. Madanapalle, Tirupati, Bangalore">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="leadPowerPhase">Available Power Phase</label>
+              <select class="form-control" id="leadPowerPhase">
+                <option value="Single Phase (220V)">Single Phase (220V)</option>
+                <option value="Three Phase (415V)">Three Phase (415V)</option>
+                <option value="Both / Either">Both / Either</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="leadDetails">Project Details & Building Floors</label>
+            <textarea class="form-control" id="leadDetails" rows="3" placeholder="Tell us your building floor height, material type, or delivery date..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitLeadBtn">
+            <i class="fa-solid fa-paper-plane"></i> Submit Quotation Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+    <div class="modal-dialog" style="max-width: 440px; text-align: center;">
+      <div class="modal-body" style="padding: 2.5rem;">
+        <div style="width: 64px; height: 64px; background: #D1FAE5; color: #047857; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem auto;">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 id="successModalTitle" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Inquiry Recorded!</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+          Thank you for contacting Paradise Steel Fabrication Works. Your inquiry reference is:
+        </p>
+        <div style="background: #FEF3C7; color: #92400E; font-weight: 800; font-size: 1.15rem; padding: 0.75rem; border-radius: 8px; margin-bottom: 1.25rem;" id="successLeadRef">
+          PSFW-2026-0001
+        </div>
+        <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">
+          Our technical team will review your requirements and reach out directly with specifications and pricing.
+        </p>
+
+        <!-- Fallback notice if user wants immediate WhatsApp push -->
+        <div id="successFallbackNotice" style="display: none; margin-bottom: 1rem;">
+          <a href="#" id="fallbackWhatsAppBtn" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+            <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+          </a>
+        </div>
+
+        <button type="button" class="btn btn-secondary btn-block" onclick="closeModal('successModal')">
+          Understood
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP CTA & BACK TO TOP -->
+  <div class="floating-actions">
+    <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top of page">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <a href="https://wa.me/917675815245?text=Hello%20Paradise%20Steel%2C%20I%20am%20interested%20in%20SPEED%20LIFT%20construction%20hoists." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp with Paradise Steel">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Chat on WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/icons/logo-horse.svg" alt="Paradise Steel Emblem" width="40" height="40">
+          <div class="brand-text">
+            <span class="brand-title">Paradise Steel</span>
+            <span class="brand-subtitle">Fabrication Works</span>
+          </div>
+        </div>
+        <p style="color: #94A3B8; font-size: 0.88rem; max-width: 360px;">
+          Manufacturers and suppliers of high-efficiency SPEED LIFT vertical material handling machinery. Saving time, career lifespan, and labor expenses across civil construction sites since 1989.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-title">Navigation</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="capabilities.html">SPEED LIFT Models</a>
+          <a href="about.html">About Company</a>
+          <a href="services.html">Services & AMC</a>
+          <a href="projects.html">Field Operations</a>
+          <a href="quote.html">Request Pricing</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Verified Models</div>
+        <div class="footer-links">
+          <a href="capabilities.html#sl200">SPEED LIFT 200 (Flagship)</a>
+          <a href="capabilities.html#sl150">SPEED LIFT 150 (Residential)</a>
+          <a href="capabilities.html#sl500">SPEED LIFT 500 (Heavy Commercial)</a>
+          <a href="services.html#amc">Annual Maintenance Contract</a>
+          <a href="assets/images/speed-lift-brochure.jpg" target="_blank" rel="noopener">Official Spec Sheet</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact Works</div>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-user-tie"></i>
+            <div><strong>R. Rama Krishna</strong>, Proprietor</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>Plot No. E-13, Industrial Development Estate, Madanapalle, Chittoor Dist, AP – 517325</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>+91 94405 85329 / +91 95157 18708</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>Primary WhatsApp: +91 76758 15245</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>manager.psfw@gmail.com</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script>
-        // REPLACE WITH YOUR ACTUAL GOOGLE APPS SCRIPT WEB APP URL AFTER DEPLOYMENT
-        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby2XpdlBfd1buCu0MfKQcfGktH1HJrDlXM_2nxlX94IO8CncLHsmozoyAw0KzBz3WzvDg/exec";
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Paradise Steel Fabrication Works. All rights reserved. Madanapalle, Andhra Pradesh.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <span>ISO Quality Mindset</span>
+        <span>Structural Steel Fabricators</span>
+      </div>
+    </div>
+  </footer>
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        function scrollToSection(id) {
-            const section = document.getElementById(id);
-            if(section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function openServiceModal(title, desc) {
-            document.getElementById('serviceDetailTitle').innerText = title;
-            document.getElementById('serviceDetailDesc').innerText = desc;
-            openModal('serviceDetailModal');
-        }
-
-        function openModal(modalId, presetModel="") {
-            const modal = document.getElementById(modalId);
-            if(modal) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                if(presetModel && modalId === 'bookingModal') {
-                    const selectEl = document.getElementById('finterest');
-                    if(selectEl) {
-                        for(let i=0; i < selectEl.options.length; i++) {
-                            if(selectEl.options[i].value.includes(presetModel) || selectEl.options[i].value === presetModel) {
-                                selectEl.selectedIndex = i;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if(modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        }
-
-        // Form submission → Apps Script SPA Style no-reload
-        async function handleFormSubmit(e) {
-            e.preventDefault();
-            
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin mr-2"></i> Submitting...`;
-
-            const payload = {
-                name: document.getElementById('fname').value,
-                phone: document.getElementById('fphone').value,
-                email: document.getElementById('femail').value,
-                interest: document.getElementById('finterest').value,
-                desc: document.getElementById('fdesc').value
-            };
-
-            try {
-                await fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-                resetForm();
-                closeModal('bookingModal');
-                openModal('successModal');
-            } catch(err) {
-                resetForm();
-                closeModal('bookingModal');
-                openModal('successModal');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = `Send Request`;
-            }
-        }
-
-        function resetForm() {
-            document.getElementById('fname').value = '';
-            document.getElementById('fphone').value = '';
-            document.getElementById('femail').value = '';
-            document.getElementById('fdesc').value = '';
-        }
-    </script>
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
 </body>
 </html>
