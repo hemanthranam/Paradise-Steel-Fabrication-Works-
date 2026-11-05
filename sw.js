@@ -2,10 +2,11 @@
  * Lightweight Service Worker for Paradise Steel Fabrication Works
  * Pre-caches shell pages and provides offline.html fallback
  */
-const CACHE_NAME = 'psfw-v2-cache';
+const CACHE_NAME = 'psfw-v3-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
+  './speed-lift-150.html',
   './speed-lift-250.html',
   './speed-lift-500.html',
   './capabilities.html',

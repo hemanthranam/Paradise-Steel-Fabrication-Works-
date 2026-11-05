@@ -176,7 +176,7 @@ function initLeadForm() {
     }
 
     try {
-      await fetch(CONFIG.APPS_SCRIPT_URL, {
+      const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain;charset=utf-8'
@@ -184,14 +184,24 @@ function initLeadForm() {
         body: JSON.stringify(payload)
       });
 
-      form.reset();
-      closeModal('quoteModal');
-      openSuccessModal(payload);
+      let result = null;
+      try {
+        result = await response.json();
+      } catch (jsonErr) {
+        console.warn("Could not parse JSON response:", jsonErr);
+      }
+
+      if (response.ok && result && result.status === 'success') {
+        form.reset();
+        closeModal('quoteModal');
+        openSuccessModal(payload, result.inquiryId || "PSFW-RECEIVED", false);
+      } else {
+        console.error("Backend error response:", result);
+        handleSubmissionFailure(payload, result ? result.message : "Service temporarily busy");
+      }
     } catch (err) {
       console.error("Submission error:", err);
-      form.reset();
-      closeModal('quoteModal');
-      openSuccessModal(payload, true);
+      handleSubmissionFailure(payload, "Network connection issue");
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
@@ -199,14 +209,23 @@ function initLeadForm() {
   });
 }
 
-function openSuccessModal(leadData, hasFallback = false) {
+function handleSubmissionFailure(leadData, reason) {
+  const fallbackMsg = `Hi, I tried submitting an inquiry on your website for ${leadData.model}. Name: ${leadData.name}, Phone: ${leadData.phone}, Location: ${leadData.location || "AP"}. Please share quotation.`;
+  const waUrl = `https://wa.me/${CONFIG.PRIMARY_WHATSAPP}?text=${encodeURIComponent(fallbackMsg)}`;
+  
+  const proceed = confirm(`Notice: The online inquiry service encountered a delay (${reason}).\n\nWould you like to connect directly with our engineering desk on WhatsApp now to receive your quotation?`);
+  if (proceed) {
+    window.open(waUrl, '_blank');
+  }
+}
+
+function openSuccessModal(leadData, actualLeadId, hasFallback = false) {
   const successModal = document.getElementById('successModal');
   if (!successModal) return;
 
   const leadRef = document.getElementById('successLeadRef');
   if (leadRef) {
-    const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-    leadRef.textContent = `PSFW-2026-${randomSuffix}`;
+    leadRef.textContent = actualLeadId;
   }
 
   const fallbackNotice = document.getElementById('successFallbackNotice');
@@ -215,7 +234,7 @@ function openSuccessModal(leadData, hasFallback = false) {
       fallbackNotice.style.display = 'block';
       const waBtn = document.getElementById('fallbackWhatsAppBtn');
       if (waBtn) {
-        const msg = encodeURIComponent(`Hi, I am interested in ${leadData.model}. Please share the equipment specifications, delivery estimate and site photos.`);
+        const msg = encodeURIComponent(`Hi, I am interested in ${leadData.model}. Inquiry Ref: ${actualLeadId}. Please share specifications.`);
         waBtn.href = `https://wa.me/${CONFIG.PRIMARY_WHATSAPP}?text=${msg}`;
       }
     } else {
