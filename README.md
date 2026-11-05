@@ -18,28 +18,45 @@ Official digital platform and lead capture system for **Paradise Steel Fabricati
   - **Works Office:** `+91 95157 18708`
 - **Email:** `manager.psfw@gmail.com`
 - **Official Domain:** `www.paradisefabrications.com`
-- **Live Deployment:** `https://hemanthranam.github.io/Paradise-Steel-Fabrication-Works-/`
+- **Live Production (Cloudflare Workers):** `https://paradise-steel-fabrication-works.ranam.workers.dev/`
+- **GitHub Pages Primary Mirror:** `https://hemanthranam.github.io/Paradise-Steel-Fabrication-Works-/`
+- **Release Version:** `v2.2.0 (Master UI Lock — Production Ready)`
+- **Parent Organisation:** Ranam MachineTech Pvt Ltd
+- **Google Drive Storage:** `Ranam MachineTech Pvt Ltd > PSFW — Paradise Steel Fabrication Works`
+- **Google Sheets CRM:** `PSFW — Business Operations Database` (`1gDPo7gaOjcPiz5yyWfSkkBlcwG3GN5acFnf3iAuYS7Y`)
+
+---
+
+## 🔒 Master UI & Architecture Lock (v2.2.0)
+
+This release establishes the permanent design system, code freeze, and structural lock for the PSFW web ecosystem:
+- **Design System Reference:** Follows Nexora Tech Enterprise (`Arsha` enterprise template pattern).
+- **Color System:** Clean White Base (`#FFFFFF`), Industrial Dark Navy (`#37517E`), Electric Cyan (`#47B2E4`), Slate Body Text (`#444444`).
+- **Layout Standards:** 100% Premium UI Cards with circular/rounded cyan icon badges (`.feature-card`, `.feature-icon`, `.about-cards-grid`, `.icon-box`). Zero unstyled raw text lists.
+- **3D Machinery Viewer:** Completely removed in favor of lightweight, ultra-fast, zero-freeze static SVG/responsive picture elements.
+- **Preloader Safety:** Dual JS (`initPageLoader()`) and CSS keyframe fallback (`@keyframes autoDismissPreloader`) ensuring zero freezing.
+- **Typography & High Contrast:** Strictly validated contrast on light, dark (`.section-dark`), and accent surfaces.
+- **Google Workspace Backend:** Production-grade Google Apps Script (`google-apps-script/Code.gs`) with `LockService` concurrency, sequential `PSFW-YYYY-XXXX` lead IDs, email alerts to `manager.psfw@gmail.com`, and automated logging to `15_Audit_Log`.
 
 ---
 
 ## ⚙️ Verified Machinery Specifications
 
-### SPEED LIFT 200 (Standard Commercial Flagship)
-- **Lifting Load Capacity:** 200 kg
-- **Lifting Height:** 100 ft (Extendable up to 10 Floors)
-- **Lifting Speed:** 70 ft/min
+### SPEED LIFT 250 (Standard Jobsite Commercial Flagship)
+- **Lifting Load Capacity:** 250 kg
+- **Lifting Height:** Up to 10 Floors (~100 ft)
 - **Unloading Area:** 360 Degrees Radial Slew
-- **Machine Tare Weight:** Approx. 155 kg
 - **Power Supply Phase:** Single Phase / Three Phase Compatible
-- **Motor Rating:** 1.5 HP High-Torque Electric Motor
-- **Warranty:** 1-Year Motor Replacement Warranty on damage
+- **Safety System:** Automatic Electromagnetic Magnetic Brake
+- **Motor Rating:** High-Torque Calibrated Electric Drive
+- **Warranty:** 1-Year Motor Replacement Warranty on mechanical fault
 - **Labor Savings:** Replaces up to 5 laborers/day on multi-story building sites
 
-### SPEED LIFT 150 (Residential & Low-Rise)
-- **Capacity:** 150 kg | **Reach:** Up to 60 ft | **Phase:** Single Phase (220V)
+### SPEED LIFT 150 (Residential & Low-Rise Builders)
+- **Payload Capacity:** 150 kg | **Lifting Reach:** Up to 60 ft (~4-5 Floors) | **Power Supply:** Single Phase 220V, 50 Hz
 
-### SPEED LIFT 500 (Heavy Commercial & High-Rise)
-- **Capacity:** 500 kg | **Reach:** Up to 10 Floors | **Phase:** Three Phase (415V)
+### SPEED LIFT 500 (Heavy Commercial & High-Rise Infrastructure)
+- **Payload Capacity:** 500 kg | **Lifting Reach:** Up to 10 Floors | **Power Supply:** Three Phase 415V
 
 ---
 
@@ -47,33 +64,40 @@ Official digital platform and lead capture system for **Paradise Steel Fabricati
 
 ```text
 Paradise-Steel-Fabrication-Works-/
-├── index.html                           # Homepage with hero, specs, ROI calculator & field gallery
-├── about.html                           # 1989 heritage, founder history & manufacturing overview
-├── capabilities.html                    # Detailed technical matrix comparing SL 150, 200 & 500
-├── services.html                        # Warranty, health checkups, AMC plans & 24h service closure
-├── projects.html                        # Authentic job site operations & material handling profile
-├── contact.html                         # Workshop address, telephone lines & inquiry form
-├── quote.html                           # Dedicated full-page quotation configurator
+├── index.html                           # Homepage with hero, product cards, about cards, services & inquiry
+├── about.html                           # 1989 heritage, founder history & core machinery principles
+├── speed-lift-150.html                  # SPEED LIFT 150 dedicated product specifications & application cards
+├── speed-lift-250.html                  # SPEED LIFT 250 standard commercial hoist specs & technical data
+├── speed-lift-500.html                  # SPEED LIFT 500 heavy commercial hoist specs & technical data
+├── capabilities.html                    # Detailed technical comparison matrix for all 3 models
+├── services.html                        # Warranty, health checkups, AMC plans & spare parts support
+├── projects.html                        # Authentic job site operations & material transport profile
+├── contact.html                         # Workshop address, telephone lines & direct inquiry form
+├── quote.html                           # Dedicated full-page quotation configurator & WhatsApp router
+├── privacy.html                         # Privacy policy & data protection standards
+├── terms.html                           # Terms of service & equipment warranty conditions
+├── refund-policy.html                   # Cancellation, refund & deposit policy
+├── cookies.html                         # Cookie notice & consent management
+├── 404.html                             # Custom branded 404 error page
+├── offline.html                         # Service worker offline fallback page
 ├── css/
-│   └── style.css                        # Industrial design system (Vanilla CSS, zero CDN dependencies)
+│   └── style.css                        # Nexora corporate master design system & responsive layout tokens
 ├── js/
-│   └── app.js                           # Form validation, modals, ROI calculator & WhatsApp generator
+│   └── app.js                           # Form validation, quote modal, ROI calculator & PWA service worker
 ├── assets/
 │   ├── images/
-│   │   ├── speed-lift-200-machine.jpg   # LOCKED MASTER ASSET (1024x767 untouched field machine photo)
+│   │   ├── speed-lift-200-machine.jpg   # LOCKED MASTER ASSET (Authentic field machine photo)
 │   │   ├── speed-lift-site-operation.jpg # Authentic high-rise slab operation photo
 │   │   ├── speed-lift-mechanism-closeup.jpg # Authentic motor box & horse emblem photo
 │   │   └── logo-horse.svg               # High-res industrial horse vector emblem
-│   ├── icons/
-│   │   └── logo-horse.svg               # Vector brand icon
-│   └── favicon.ico                      # Industrial tab icon
+│   └── icons/
+│       └── logo-horse.svg               # Vector brand icon
 ├── google-apps-script/
 │   ├── Code.gs                          # Production-ready Apps Script backend with LockService & email alerts
 │   └── README.md                        # Step-by-step Google Sheet & Web App deployment instructions
 ├── robots.txt                           # Search engine crawling rules
 ├── sitemap.xml                          # Complete XML sitemap
-├── .gitignore                           # Git ignore rules
-└── README.md                            # Complete engineering documentation
+└── README.md                            # Master project documentation & architecture lock
 ```
 
 ---
@@ -83,6 +107,9 @@ As per strict engineering guidelines, `speed-lift-200-machine.jpg` is a **locked
 
 ---
 
-## 🚀 Deployment
+## 🚀 Production Deployment & Status
 
-The site is configured for direct static hosting on **GitHub Pages** from the root (`/`) of the `main` branch. No build steps, bundlers, or Node dependencies are required.
+- **Cloudflare Workers Deployment:** `https://paradise-steel-fabrication-works.ranam.workers.dev/`
+- **GitHub Repository:** `https://github.com/hemanthranam/Paradise-Steel-Fabrication-Works-`
+- **Current Tag:** `v2.2.0` (Master UI Lock)
+- **Status:** **Production Ready & Live** (All 16 pages verified and rendered without freeze)
