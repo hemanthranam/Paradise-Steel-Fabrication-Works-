@@ -269,11 +269,13 @@ let machine3D = {
   camera: null,
   renderer: null,
   machineGroup: null,
+  model150Group: null,
   model250Group: null,
   model500Group: null,
   isRotating: true,
   currentModel: '250',
   isDragging: false,
+  inViewport: true,
   previousMousePosition: { x: 0, y: 0 }
 };
 
@@ -338,13 +340,17 @@ function init3DMachine() {
     scene.add(rootGroup);
     machine3D.machineGroup = rootGroup;
 
-    // Create Models
-    machine3D.model250Group = buildSpeedLiftModel(false);
-    machine3D.model500Group = buildSpeedLiftModel(true);
+    // Create Models for all 3 official capacities
+    machine3D.model150Group = buildSpeedLiftModel('150');
+    machine3D.model250Group = buildSpeedLiftModel('250');
+    machine3D.model500Group = buildSpeedLiftModel('500');
 
-    rootGroup.add(machine3D.model250Group);
-    // Model 500 is hidden initially
+    machine3D.model150Group.visible = false;
+    machine3D.model250Group.visible = true;
     machine3D.model500Group.visible = false;
+
+    rootGroup.add(machine3D.model150Group);
+    rootGroup.add(machine3D.model250Group);
     rootGroup.add(machine3D.model500Group);
 
     // Ground platform grid
@@ -352,19 +358,29 @@ function init3DMachine() {
     gridHelper.position.y = -0.01;
     scene.add(gridHelper);
 
-    // Interactive Drag Orbit
+    // Interactive Drag Orbit & Wheel Zoom
     setupCanvasControls(container);
 
+    // IntersectionObserver to suspend WebGL rendering when off-screen (Battery & CPU conservation)
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          machine3D.inViewport = entry.isIntersecting;
+        });
+      }, { threshold: 0.1 });
+      observer.observe(container);
+    }
+
     // Render loop
-    let lastTime = 0;
-    function animate(currentTime) {
+    function animate() {
       requestAnimationFrame(animate);
 
-      if (machine3D.isRotating && !machine3D.isDragging) {
-        rootGroup.rotation.y += 0.005;
+      if (machine3D.inViewport) {
+        if (machine3D.isRotating && !machine3D.isDragging) {
+          rootGroup.rotation.y += 0.005;
+        }
+        renderer.render(scene, camera);
       }
-
-      renderer.render(scene, camera);
     }
     requestAnimationFrame(animate);
 
@@ -387,11 +403,162 @@ function init3DMachine() {
 }
 
 /**
- * Builds the procedural 3D model representing the SPEED LIFT
- * @param {boolean} isHeavyDuty - true for SPEED LIFT 500, false for 250
+ * Setup canvas mouse & touch drag orbit and clamped zoom
  */
-function buildSpeedLiftModel(isHeavyDuty = false) {
+function setupCanvasControls(container) {
+  let isPointerDown = false;
+  let startX = 0;
+  let startY = 0;
+  let initialPinchDistance = null;
+
+  container.addEventListener('pointerdown', (e) => {
+    isPointerDown = true;
+    machine3D.isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    container.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('pointermove', (e) => {
+    if (!isPointerDown || !machine3D.machineGroup) return;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+
+    machine3D.machineGroup.rotation.y += deltaX * 0.008;
+
+    if (machine3D.camera) {
+      machine3D.camera.position.y = Math.max(1.0, Math.min(6.5, machine3D.camera.position.y - deltaY * 0.006));
+      machine3D.camera.lookAt(0, 1.3, 0);
+    }
+
+    startX = e.clientX;
+    startY = e.clientY;
+  });
+
+  window.addEventListener('pointerup', () => {
+    isPointerDown = false;
+    machine3D.isDragging = false;
+    container.style.cursor = 'grab';
+  });
+
+  // Clamped Wheel Zoom (Distance min: 3.5, max: 9.5)
+  container.addEventListener('wheel', (e) => {
+    if (!machine3D.camera) return;
+    e.preventDefault();
+
+    const zoomSpeed = 0.0025;
+    const factor = 1 + e.deltaY * zoomSpeed;
+    const targetPos = machine3D.camera.position.clone().multiplyScalar(factor);
+    const dist = targetPos.length();
+
+    if (dist >= 3.5 && dist <= 9.5) {
+      machine3D.camera.position.copy(targetPos);
+      machine3D.camera.lookAt(0, 1.3, 0);
+    }
+  }, { passive: false });
+
+  // Touch Pinch Zoom Support
+  container.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && machine3D.camera) {
+      e.preventDefault();
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const currentDist = Math.hypot(dx, dy);
+
+      if (initialPinchDistance) {
+        const pinchDelta = initialPinchDistance - currentDist;
+        const factor = 1 + pinchDelta * 0.004;
+        const targetPos = machine3D.camera.position.clone().multiplyScalar(factor);
+        const dist = targetPos.length();
+
+        if (dist >= 3.5 && dist <= 9.5) {
+          machine3D.camera.position.copy(targetPos);
+          machine3D.camera.lookAt(0, 1.3, 0);
+        }
+      }
+      initialPinchDistance = currentDist;
+    }
+  }, { passive: false });
+
+  container.addEventListener('touchend', () => {
+    initialPinchDistance = null;
+  });
+}
+
+/**
+ * Switch 3D Model between SPEED LIFT 150, 250 and 500
+ */
+function switch3DModel(modelKey) {
+  if (!machine3D.model250Group) return;
+
+  const btn150 = document.getElementById('btnModel150');
+  const btn250 = document.getElementById('btnModel250');
+  const btn500 = document.getElementById('btnModel500');
+
+  const tag150 = document.getElementById('modelTag150');
+  const tag250 = document.getElementById('modelTag250');
+  const tag500 = document.getElementById('modelTag500');
+
+  // Deactivate all buttons
+  [btn150, btn250, btn500].forEach(btn => { if (btn) btn.classList.remove('active'); });
+  [tag150, tag250, tag500].forEach(tag => { if (tag) tag.style.display = 'none'; });
+
+  // Hide all model groups
+  if (machine3D.model150Group) machine3D.model150Group.visible = false;
+  if (machine3D.model250Group) machine3D.model250Group.visible = false;
+  if (machine3D.model500Group) machine3D.model500Group.visible = false;
+
+  if (modelKey === '150' && machine3D.model150Group) {
+    machine3D.model150Group.visible = true;
+    machine3D.currentModel = '150';
+    if (btn150) btn150.classList.add('active');
+    if (tag150) tag150.style.display = 'inline-block';
+  } else if (modelKey === '500' && machine3D.model500Group) {
+    machine3D.model500Group.visible = true;
+    machine3D.currentModel = '500';
+    if (btn500) btn500.classList.add('active');
+    if (tag500) tag500.style.display = 'inline-block';
+  } else {
+    if (machine3D.model250Group) machine3D.model250Group.visible = true;
+    machine3D.currentModel = '250';
+    if (btn250) btn250.classList.add('active');
+    if (tag250) tag250.style.display = 'inline-block';
+  }
+}
+
+/**
+ * Toggle auto rotation of 3D Machine
+ */
+function toggle3DRotation() {
+  machine3D.isRotating = !machine3D.isRotating;
+  const rotBtn = document.getElementById('btn3DRotate');
+  if (rotBtn) {
+    rotBtn.innerHTML = machine3D.isRotating
+      ? '<i class="fa-solid fa-pause"></i> Pause'
+      : '<i class="fa-solid fa-play"></i> Auto-Rotate';
+  }
+}
+
+/**
+ * Reset 3D Camera View
+ */
+function reset3DView() {
+  if (!machine3D.machineGroup || !machine3D.camera) return;
+  machine3D.machineGroup.rotation.y = 0;
+  machine3D.camera.position.set(4.5, 3.2, 5.8);
+  machine3D.camera.lookAt(0, 1.3, 0);
+}
+
+/**
+ * Builds the procedural 3D model representing the SPEED LIFT
+ * @param {string|boolean} variant - '150', '250', '500' (or legacy boolean isHeavyDuty)
+ */
+function buildSpeedLiftModel(variant = '250') {
   const group = new THREE.Group();
+
+  // Normalize variant
+  let isHeavyDuty = variant === '500' || variant === true;
+  let isCompact = variant === '150';
 
   // Materials based on authentic Paradise Steel machinery
   const yellowPaint = new THREE.MeshStandardMaterial({
@@ -424,8 +591,8 @@ function buildSpeedLiftModel(isHeavyDuty = false) {
     metalness: 0.3
   });
 
-  const scaleMultiplier = isHeavyDuty ? 1.15 : 1.0;
-  const mastThickness = isHeavyDuty ? 0.16 : 0.12;
+  const scaleMultiplier = isHeavyDuty ? 1.15 : (isCompact ? 0.85 : 1.0);
+  const mastThickness = isHeavyDuty ? 0.16 : (isCompact ? 0.10 : 0.12);
 
   // 1. BASE FRAME: Triangular / A-Frame outrigger base with mounting plates
   const baseGroup = new THREE.Group();
@@ -640,99 +807,6 @@ function buildSpeedLiftModel(isHeavyDuty = false) {
   return group;
 }
 
-/**
- * Setup canvas mouse & touch drag orbit
- */
-function setupCanvasControls(container) {
-  let isPointerDown = false;
-  let startX = 0;
-  let startY = 0;
-
-  container.addEventListener('pointerdown', (e) => {
-    isPointerDown = true;
-    machine3D.isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    container.style.cursor = 'grabbing';
-  });
-
-  window.addEventListener('pointermove', (e) => {
-    if (!isPointerDown || !machine3D.machineGroup) return;
-    const deltaX = e.clientX - startX;
-    const deltaY = e.clientY - startY;
-
-    machine3D.machineGroup.rotation.y += deltaX * 0.008;
-
-    if (machine3D.camera) {
-      machine3D.camera.position.y = Math.max(1.2, Math.min(6.0, machine3D.camera.position.y - deltaY * 0.006));
-      machine3D.camera.lookAt(0, 1.3, 0);
-    }
-
-    startX = e.clientX;
-    startY = e.clientY;
-  });
-
-  window.addEventListener('pointerup', () => {
-    isPointerDown = false;
-    machine3D.isDragging = false;
-    container.style.cursor = 'grab';
-  });
-}
-
-/**
- * Switch 3D Model between SPEED LIFT 250 and SPEED LIFT 500
- */
-function switch3DModel(modelKey) {
-  if (!machine3D.model250Group || !machine3D.model500Group) return;
-
-  const btn250 = document.getElementById('btnModel250');
-  const btn500 = document.getElementById('btnModel500');
-  const tag250 = document.getElementById('modelTag250');
-  const tag500 = document.getElementById('modelTag500');
-
-  if (modelKey === '500') {
-    machine3D.model250Group.visible = false;
-    machine3D.model500Group.visible = true;
-    machine3D.currentModel = '500';
-
-    if (btn250) btn250.classList.remove('active');
-    if (btn500) btn500.classList.add('active');
-    if (tag250) tag250.style.display = 'none';
-    if (tag500) tag500.style.display = 'inline-block';
-  } else {
-    machine3D.model250Group.visible = true;
-    machine3D.model500Group.visible = false;
-    machine3D.currentModel = '250';
-
-    if (btn250) btn250.classList.add('active');
-    if (btn500) btn500.classList.remove('active');
-    if (tag250) tag250.style.display = 'inline-block';
-    if (tag500) tag500.style.display = 'none';
-  }
-}
-
-/**
- * Toggle auto rotation of 3D Machine
- */
-function toggle3DRotation() {
-  machine3D.isRotating = !machine3D.isRotating;
-  const rotBtn = document.getElementById('btn3DRotate');
-  if (rotBtn) {
-    rotBtn.innerHTML = machine3D.isRotating
-      ? '<i class="fa-solid fa-pause"></i> Pause'
-      : '<i class="fa-solid fa-play"></i> Auto-Rotate';
-  }
-}
-
-/**
- * Reset 3D Camera View
- */
-function reset3DView() {
-  if (!machine3D.machineGroup || !machine3D.camera) return;
-  machine3D.machineGroup.rotation.y = 0;
-  machine3D.camera.position.set(4.5, 3.2, 5.8);
-  machine3D.camera.lookAt(0, 1.3, 0);
-}
 
 /* --------------------------------------------------------------------------
    6. ROI & LABOR SAVINGS CALCULATOR

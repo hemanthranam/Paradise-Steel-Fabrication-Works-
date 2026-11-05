@@ -42,11 +42,11 @@
   <!-- TOP UTILITY BAR -->
   
 
-  <!-- NAVIGATION -->
+    <!-- MAIN NAVIGATION (6-ITEM ARCHITECTURE) -->
   <nav class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand-logo" aria-label="Paradise Steel Fabrication Works Home">
-        <img src="assets/images/logo-horse.svg" alt="Paradise Steel Emblem" width="46" height="46">
+        <img src="assets/images/logo-horse.svg" alt="Paradise Steel Emblem" width="44" height="44">
         <div class="brand-text">
           <span class="brand-title">PARADISE STEEL</span>
           <span class="brand-subtitle">FABRICATION WORKS</span>
@@ -54,20 +54,91 @@
       </a>
 
       <div class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="speed-lift-150.html" class="nav-link active">Speed Lift 150</a>
-        <a href="speed-lift-250.html" class="nav-link">Speed Lift 250</a>
-        <a href="speed-lift-500.html" class="nav-link">Speed Lift 500</a>
-        <a href="capabilities.html" class="nav-link">Comparison</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="projects.html" class="nav-link">Field Operations</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="capabilities.html" class="nav-link active" aria-haspopup="true">
+            Products <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="speed-lift-150.html" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-house-chimney"></i></div>
+              <div>
+                <div class="dropdown-title">SPEED LIFT 150</div>
+                <div class="dropdown-desc">150 kg payload &bull; Up to 60 ft &bull; 220V residential</div>
+              </div>
+            </a>
+            <a href="speed-lift-250.html" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-building"></i></div>
+              <div>
+                <div class="dropdown-title">SPEED LIFT 250</div>
+                <div class="dropdown-desc">250 kg payload &bull; Up to 10 floors &bull; Mid-rise flagship</div>
+              </div>
+            </a>
+            <a href="speed-lift-500.html" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-industry"></i></div>
+              <div>
+                <div class="dropdown-title">SPEED LIFT 500</div>
+                <div class="dropdown-desc">500 kg payload &bull; Up to 10 floors &bull; Heavy commercial</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="capabilities.html" class="nav-link">Comparison</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About Us</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="services.html" class="nav-link" aria-haspopup="true">
+            Services <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="services.html#installation" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div>
+                <div class="dropdown-title">Installation &amp; Commissioning</div>
+                <div class="dropdown-desc">Factory technicians deploy &amp; calibrate on site</div>
+              </div>
+            </a>
+            <a href="services.html#amc" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <div class="dropdown-title">Maintenance &amp; AMC</div>
+                <div class="dropdown-desc">Comprehensive preventive care &amp; inspection</div>
+              </div>
+            </a>
+            <a href="services.html#spares" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-gears"></i></div>
+              <div>
+                <div class="dropdown-title">Spare Parts &amp; Support</div>
+                <div class="dropdown-desc">Genuine wire ropes, brake discs &amp; motors</div>
+              </div>
+            </a>
+            <a href="projects.html" class="dropdown-link">
+              <div class="dropdown-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <div>
+                <div class="dropdown-title">Field Operations</div>
+                <div class="dropdown-desc">Active construction hoist job sites in AP</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
       </div>
 
       <div class="nav-actions">
-        <button type="button" class="btn btn-primary" onclick="openModal('quoteModal', 'SPEED LIFT 150')">
-          <i class="fa-solid fa-file-invoice"></i> Get Quote
+        <button type="button" class="btn btn-primary" onclick="openModal('quoteModal')">
+          <i class="fa-solid fa-file-invoice"></i> Request a Quote
         </button>
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -77,18 +148,48 @@
 
     <!-- MOBILE DRAWER -->
     <div class="mobile-nav" id="mobileNav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="speed-lift-150.html" class="nav-link active">SPEED LIFT 150</a>
-      <a href="speed-lift-250.html" class="nav-link">SPEED LIFT 250</a>
-      <a href="speed-lift-500.html" class="nav-link">SPEED LIFT 500</a>
-      <a href="capabilities.html" class="nav-link">Model Comparison</a>
-      <a href="about.html" class="nav-link">About Company</a>
-      <a href="services.html" class="nav-link">Services &amp; AMC</a>
-      <a href="projects.html" class="nav-link">Field Operations</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <button type="button" class="btn btn-primary btn-block" onclick="openModal('quoteModal', 'SPEED LIFT 150')">
-        <i class="fa-solid fa-file-invoice"></i> Get Quote
-      </button>
+      <div class="mobile-nav-group">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
+
+      <div class="mobile-nav-group">
+        <div class="mobile-nav-heading">Products</div>
+        <a href="capabilities.html" class="mobile-sublink active">All Models Overview</a>
+        <div class="mobile-sublinks">
+          <a href="speed-lift-150.html" class="mobile-sublink">SPEED LIFT 150 (Residential)</a>
+          <a href="speed-lift-250.html" class="mobile-sublink">SPEED LIFT 250 (Mid-Rise Flagship)</a>
+          <a href="speed-lift-500.html" class="mobile-sublink">SPEED LIFT 500 (Commercial)</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-group">
+        <a href="capabilities.html" class="nav-link">Model Comparison</a>
+      </div>
+
+      <div class="mobile-nav-group">
+        <a href="about.html" class="nav-link">About Us</a>
+      </div>
+
+      <div class="mobile-nav-group">
+        <div class="mobile-nav-heading">Services &amp; Support</div>
+        <a href="services.html" class="mobile-sublink">Services Overview</a>
+        <div class="mobile-sublinks">
+          <a href="services.html#installation" class="mobile-sublink">Installation &amp; Commissioning</a>
+          <a href="services.html#amc" class="mobile-sublink">Maintenance &amp; AMC</a>
+          <a href="services.html#spares" class="mobile-sublink">Spare Parts</a>
+          <a href="projects.html" class="mobile-sublink">Field Operations</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-group">
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <button type="button" class="btn btn-primary btn-block" onclick="openModal('quoteModal')">
+          <i class="fa-solid fa-file-invoice"></i> Request a Quote
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -364,67 +465,90 @@
     </div>
   </div>
 
-  <!-- SITE FOOTER -->
+    <!-- SITE FOOTER: MINIMAL 4-COLUMN INDUSTRIAL ARCHITECTURE -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img src="assets/images/logo-horse.svg" alt="Paradise Steel Emblem" width="38" height="38">
-          <span class="footer-brand-title">PARADISE STEEL</span>
+      <!-- Column 1: Company -->
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/images/logo-horse.svg" alt="Paradise Steel Emblem" width="42" height="42">
+          <div class="brand-text">
+            <span class="brand-title" style="color: #FFFFFF;">PARADISE STEEL</span>
+            <span class="brand-subtitle" style="color: #94A3B8;">FABRICATION WORKS</span>
+          </div>
         </div>
-        <p class="footer-desc">
-          Pioneering heavy-duty vertical material hoists and industrial steel fabrication in Madanapalle, Andhra Pradesh since 1989.
+        <p style="color: #94A3B8; font-size: 0.88rem; line-height: 1.6; margin-top: 0.5rem;">
+          Manufacturing dependable construction material hoists and industrial steel fabrication solutions for contractors and infrastructure projects since 1989.
         </p>
-        <div class="footer-contact-item">
-          <i class="fa-solid fa-location-dot"></i> Plot E-13, Industrial Estate, Madanapalle, AP &ndash; 517325
-        </div>
-        <div class="footer-contact-item">
-          <i class="fa-solid fa-phone"></i> <a href="tel:+919440585329">+91 94405 85329</a> / <a href="tel:+919515718708">+91 95157 18708</a>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fa-solid fa-envelope"></i> <a href="mailto:manager.psfw@gmail.com">manager.psfw@gmail.com</a>
+        <div style="font-size: 0.78rem; color: #64748B; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+          Plot E-13, Industrial Estate, Madanapalle, AP
         </div>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Machinery Lineup</h4>
-        <ul class="footer-links">
-          <li><a href="speed-lift-150.html">SPEED LIFT 150 (Compact Residential)</a></li>
-          <li><a href="speed-lift-250.html">SPEED LIFT 250 (Residential Flagship)</a></li>
-          <li><a href="speed-lift-500.html">SPEED LIFT 500 (Commercial Heavy Duty)</a></li>
-          <li><a href="capabilities.html">Model Comparison Matrix</a></li>
-          <li><a href="quote.html">Get Equipment Quote</a></li>
-        </ul>
+      <!-- Column 2: Products -->
+      <div>
+        <div class="footer-title">Products</div>
+        <div class="footer-links">
+          <a href="speed-lift-150.html">SPEED LIFT 150</a>
+          <a href="speed-lift-250.html">SPEED LIFT 250</a>
+          <a href="speed-lift-500.html">SPEED LIFT 500</a>
+          <a href="capabilities.html">Model Comparison</a>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Services &amp; Heritage</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About Company (Est. 1989)</a></li>
-          <li><a href="services.html">Services &amp; Motor Warranty</a></li>
-          <li><a href="services.html#amc">Annual Maintenance (AMC)</a></li>
-          <li><a href="projects.html">Field Operations Gallery</a></li>
-          <li><a href="contact.html">Works Location &amp; Contact</a></li>
-        </ul>
+      <!-- Column 3: Company & Support -->
+      <div>
+        <div class="footer-title">Company &amp; Support</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services &amp; Maintenance</a>
+          <a href="projects.html">Field Operations</a>
+          <a href="quote.html">Request a Quote</a>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-heading">Legal &amp; Compliance</h4>
-        <ul class="footer-links">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-          <li><a href="refund-policy.html">Commercial &amp; Refund Policy</a></li>
-          <li><a href="cookies.html">Cookie Policy</a></li>
-        </ul>
+      <!-- Column 4: Contact -->
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-user-tie"></i>
+            <div><strong>R. Rama Krishna</strong>, Proprietor</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>Plot E-13, Industrial Estate, Madanapalle, Andhra Pradesh – 517325</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+919440585329">+91 94405 85329</a> / <a href="tel:+919515718708">+91 95157 18708</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp text-success"></i>
+            <div>
+              <a href="https://wa.me/919440585329" target="_blank" rel="noopener">WhatsApp Enquiry</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <a href="mailto:manager.psfw@gmail.com">manager.psfw@gmail.com</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Compact Bottom Legal Strip -->
     <div class="container footer-bottom">
-      <div>&copy; 1989&ndash;2026 Paradise Steel Fabrication Works. All rights reserved. Madanapalle, Andhra Pradesh.</div>
+      <div>&copy; 2026 Paradise Steel Fabrication Works. All rights reserved. Madanapalle, Andhra Pradesh.</div>
       <div class="footer-legal-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="refund-policy.html">Refunds</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
       </div>
     </div>
   </footer>
