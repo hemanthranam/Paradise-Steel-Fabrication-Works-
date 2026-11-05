@@ -56,8 +56,21 @@ function initPageLoader() {
    1. NAVIGATION & MOBILE DRAWER
    -------------------------------------------------------------------------- */
 function initNavigation() {
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
+  const header = document.getElementById('header');
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  const menuToggle = document.getElementById('menuToggle') || document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.getElementById('mobileNav') || document.querySelector('.mobile-nav-wrapper');
 
   if (menuToggle && mobileNav) {
     menuToggle.addEventListener('click', () => {
