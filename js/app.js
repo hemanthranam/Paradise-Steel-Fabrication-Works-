@@ -35,21 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
    0. PAGE LOADER
    -------------------------------------------------------------------------- */
 function initPageLoader() {
-  const loader = document.getElementById('pageLoader');
-  if (!loader) return;
+  const loaders = document.querySelectorAll('#preloader, #pageLoader, .page-loader');
+  if (!loaders.length) return;
 
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('loaded');
-    }, 250);
-  });
+  const dismissLoader = () => {
+    loaders.forEach(el => {
+      el.classList.add('loaded');
+      setTimeout(() => {
+        el.style.display = 'none';
+      }, 400);
+    });
+  };
 
-  // Fallback in case load event already fired or took too long
-  setTimeout(() => {
-    if (loader && !loader.classList.contains('loaded')) {
-      loader.classList.add('loaded');
-    }
-  }, 1200);
+  if (document.readyState === 'complete') {
+    dismissLoader();
+  } else {
+    window.addEventListener('load', () => setTimeout(dismissLoader, 150));
+    document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 500));
+  }
+
+  // Hard safety timeout: loader will ALWAYS disappear within 800ms
+  setTimeout(dismissLoader, 800);
 }
 
 /* --------------------------------------------------------------------------
