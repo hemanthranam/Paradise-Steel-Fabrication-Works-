@@ -113,8 +113,17 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   font-size: 16px;
   text-size-adjust: 100%;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+section {
+  scroll-margin-top: 100px;
 }
 
 body {
@@ -125,6 +134,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Secondary Page Top Padding to Prevent Header Overlap */
+.hero,
+.section.hero {
+  padding-top: 120px !important;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 85px;
+  }
+  [id], section {
+    scroll-margin-top: 85px;
+  }
+  .hero,
+  .section.hero {
+    padding-top: 105px !important;
+  }
 }
 
 img, picture, svg, video {
