@@ -193,12 +193,19 @@ button {
   align-items: center;
   justify-content: center;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  animation: autoDismissPreloader 0.4s ease 1s forwards;
+}
+
+@keyframes autoDismissPreloader {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; display: none; }
 }
 
 #preloader.loaded, .page-loader.loaded {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
 }
 
 .preloader-spinner {
