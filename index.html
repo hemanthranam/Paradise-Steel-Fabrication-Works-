@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Design System -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -243,12 +243,9 @@
             <p>
               Under the leadership of Founder R. Rama Krishna, PSFW has spent over three decades perfecting high-duty construction material hoists that replace slow, injury-prone manual carrying with rapid, mechanized vertical delivery.
             </p>
-            <ul>
-              <li><i class="fa-solid fa-check-double"></i> <strong>Heavy-Duty Structural Truss:</strong> Built from prime structural steel channels and cross-braced masts for rigorous site durability.</li>
-              <li><i class="fa-solid fa-check-double"></i> <strong>Integrated Magnetic Brake:</strong> Instant mechanical safety stop protects workers and materials against power interruption.</li>
-              <li><i class="fa-solid fa-check-double"></i> <strong>High-Speed Hopper Discharge:</strong> Counterbalanced material bucket with 360-degree slew pivot for safe terrace unloading.</li>
-            </ul>
-            <a href="about.html" class="btn-learn-more">Learn More About PSFW</a>
+            <div style="margin-top: 1.5rem;">
+              <a href="about.html" class="btn-learn-more">Learn More About PSFW</a>
+            </div>
           </div>
 
           <div>
@@ -259,6 +256,33 @@
                 Every SPEED LIFT machine is fabricated, assembled, and test-run directly at Plot E-13, Industrial Development Estate, Madanapalle before shipment to client job sites.
               </p>
             </div>
+          </div>
+        </div>
+
+        <!-- 3 Feature UI Cards replacing uncarded bullet list -->
+        <div class="about-cards-grid">
+          <div class="about-feature-card">
+            <div class="about-card-icon">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h4>Heavy-Duty Structural Truss</h4>
+            <p>Fabricated from prime structural steel channels and cross-braced modular masts for robust field resilience under continuous lifting shifts.</p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-card-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h4>Integrated Magnetic Brake</h4>
+            <p>Instant failsafe electro-mechanical holding brake locks the winch drum in place when power drops or controls are released, preventing load slip.</p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-card-icon">
+              <i class="fa-solid fa-arrows-spin"></i>
+            </div>
+            <h4>360° Slew Bucket Discharge</h4>
+            <p>Smooth counterbalanced material hopper with 360-degree radial pivot allows effortless, safe slab unloading without workers leaning over slab edges.</p>
           </div>
         </div>
       </div>
@@ -385,67 +409,6 @@
           </div>
 
         </div>
-      </div>
-    </section>
-
-    <!-- ======= 3D Machine Presentation Canvas ======= -->
-    <section id="machine3d" class="section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>3D Machine Experience</h2>
-          <p>Inspect the physical structural architecture of the SPEED LIFT. Orbit the assembly in 360 degrees, inspect safety subsystems, and toggle between models.</p>
-        </div>
-
-        <div class="machine-3d-stage" id="machine3dContainer">
-          <!-- 3D Controls Floating Bar -->
-          <div class="machine-3d-controls">
-            <button type="button" class="btn-3d-ctrl" id="btnModel150" onclick="switch3DModel('150')">
-              <i class="fa-solid fa-cube"></i> SPEED LIFT 150
-            </button>
-            <button type="button" class="btn-3d-ctrl active" id="btnModel250" onclick="switch3DModel('250')">
-              <i class="fa-solid fa-cube"></i> SPEED LIFT 250
-            </button>
-            <button type="button" class="btn-3d-ctrl" id="btnModel500" onclick="switch3DModel('500')">
-              <i class="fa-solid fa-cubes"></i> SPEED LIFT 500
-            </button>
-            <button type="button" class="btn-3d-ctrl" id="btn3DRotate" onclick="toggle3DRotation()">
-              <i class="fa-solid fa-pause"></i> Pause
-            </button>
-            <button type="button" class="btn-3d-ctrl" onclick="reset3DView()">
-              <i class="fa-solid fa-arrows-rotate"></i> Reset View
-            </button>
-          </div>
-
-          <!-- WebGL Canvas for Three.js -->
-          <canvas id="machine3dCanvas"></canvas>
-
-          <!-- Static Fallback if WebGL is disabled or unsupported -->
-          <div id="machine3dFallback" style="display: none; padding: 2rem; text-align: center;">
-            <img src="assets/images/speed-lift-mechanism-isolated.png" alt="SPEED LIFT Technical Assembly" style="max-height: 360px; margin: 0 auto;">
-            <p style="color: var(--color-text-muted); margin-top: 1rem; font-size: 14px;">Interactive WebGL unavailable on this device. Displaying technical machine cutout.</p>
-          </div>
-
-          <!-- Component Hotspots & Legend -->
-          <div class="machine-3d-info">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <div style="font-weight: 700; font-size: 1.05rem; color: var(--color-primary-navy);">
-                <span id="modelTag150" style="display: none;">SPEED LIFT 150 — Compact Builder Lift (150 kg)</span>
-                <span id="modelTag250">SPEED LIFT 250 — Standard Jobsite Hoist (250 kg)</span>
-                <span id="modelTag500" style="display: none;">SPEED LIFT 500 — Heavy Duty Commercial Lift (500 kg)</span>
-              </div>
-              <span class="badge-tag"><i class="fa-solid fa-vr-cardboard"></i> INTERACTIVE 3D</span>
-            </div>
-            <div class="machine-3d-hotspots">
-              <div class="hotspot-pill"><i class="fa-solid fa-gears text-primary"></i> TEFC Induction Motor &amp; Magnetic Brake</div>
-              <div class="hotspot-pill"><i class="fa-solid fa-ring text-primary"></i> Cast Head Sheave &amp; Steel Wire Rope</div>
-              <div class="hotspot-pill"><i class="fa-solid fa-maximize text-primary"></i> Heavy Box-Truss Mast Sections</div>
-              <div class="hotspot-pill"><i class="fa-solid fa-box text-primary"></i> Counterbalanced Material Hopper</div>
-            </div>
-          </div>
-        </div>
-        <p style="text-align: center; font-size: 13.5px; color: var(--color-text-muted); margin-top: 15px;">
-          <i class="fa-solid fa-hand-pointer"></i> Click &amp; drag to orbit | Scroll / pinch to zoom | Select models above to compare physical build dimensions
-        </p>
       </div>
     </section>
 
@@ -893,6 +856,6 @@
   <!-- Three.js for 3D Machine Experience -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- Application Script -->
-  <script src="js/app.js?v=2.1"></script>
+  <script src="js/app.js?v=2.2"></script>
 </body>
 </html>
