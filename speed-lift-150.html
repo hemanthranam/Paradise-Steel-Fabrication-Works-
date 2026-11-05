@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <link rel="stylesheet" href="css/style.css?v=2.3">
 </head>
 <body>
 
@@ -296,28 +296,30 @@
   </section>
 
   <!-- QUOTE MODAL -->
-  <div class="modal-overlay" id="quoteModal">
-    <div class="modal-card">
+  <div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+    <div class="modal-dialog">
       <div class="modal-header">
         <div>
-          <h3 class="modal-title">Request Quotation — SPEED LIFT 150</h3>
-          <p class="modal-subtitle">Direct factory pricing from Paradise Steel Works, Madanapalle.</p>
+          <h3 id="quoteModalTitle" style="font-size: 1.25rem; color: var(--color-primary-navy);">Request SPEED LIFT 150 Quotation</h3>
+          <p style="font-size: 0.82rem; margin: 0; color: var(--color-text-muted);">Direct factory pricing from Paradise Steel Works, Madanapalle.</p>
         </div>
-        <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+        <button type="button" class="modal-close" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+      <div class="modal-body">
+        <form id="leadForm">
+          <input type="text" id="leadHoneypot" style="display: none;" tabindex="-1" autocomplete="off">
+          <input type="hidden" id="leadModel" value="SPEED LIFT 150">
 
-      <form id="leadForm" class="modal-body">
-        <input type="text" id="leadHoneypot" style="display:none;" tabindex="-1" autocomplete="off">
-
-        <div class="form-grid">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="leadName">Your Name *</label>
+              <label class="form-label" for="leadName">Full Name *</label>
               <input type="text" class="form-control" id="leadName" required placeholder="e.g. Ramesh Reddy">
             </div>
             <div class="form-group">
               <label class="form-label" for="leadPhone">Phone Number *</label>
-              <input type="tel" class="form-control" id="leadPhone" required placeholder="e.g. 9848012345">
+              <input type="tel" class="form-control" id="leadPhone" required placeholder="10-digit mobile number">
             </div>
           </div>
 
@@ -327,65 +329,52 @@
               <input type="email" class="form-control" id="leadEmail" placeholder="yourname@gmail.com">
             </div>
             <div class="form-group">
-              <label class="form-label" for="leadModel">Select Model *</label>
-              <select class="form-control" id="leadModel" required>
-                <option value="SPEED LIFT 150" selected>SPEED LIFT 150 (150 kg / Compact Residential)</option>
-                <option value="SPEED LIFT 250">SPEED LIFT 250 (250 kg / Residential Flagship)</option>
-                <option value="SPEED LIFT 500">SPEED LIFT 500 (500 kg / Commercial Heavy Duty)</option>
-                <option value="Machinery Maintenance">Machinery Maintenance &amp; Spares / AMC</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
               <label class="form-label" for="leadLocation">Site Location / City</label>
               <input type="text" class="form-control" id="leadLocation" placeholder="e.g. Madanapalle, Tirupati, Bangalore">
             </div>
-            <div class="form-group">
-              <label class="form-label" for="leadPowerPhase">Available Power Phase</label>
-              <select class="form-control" id="leadPowerPhase">
-                <option value="Single Phase (220V)">Single Phase (220V)</option>
-                <option value="Three Phase (415V)">Three Phase (415V)</option>
-                <option value="Both Available">Both Available</option>
-                <option value="Not Sure">Not Sure / Please Advise</option>
-              </select>
-            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="leadPowerPhase">Available Power Phase</label>
+            <select class="form-control" id="leadPowerPhase">
+              <option value="Single Phase (220V)">Single Phase (220V)</option>
+              <option value="Three Phase (415V)">Three Phase (415V)</option>
+              <option value="Both Available">Both Available</option>
+              <option value="Not Sure">Not Sure / Please Advise</option>
+            </select>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="leadDetails">Project Requirements / Number of Floors</label>
             <textarea class="form-control" id="leadDetails" rows="3" placeholder="Tell us your building floor height, material lifting requirements, or dispatch timeline..."></textarea>
           </div>
-        </div>
 
-        <div class="modal-footer" style="padding: 1.5rem 0 0 0;">
-          <button type="submit" class="btn btn-primary btn-block" id="submitLeadBtn">
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitLeadBtn">
             <i class="fa-solid fa-paper-plane"></i> Submit Quotation Request
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 
   <!-- SUCCESS MODAL -->
-  <div class="modal-overlay" id="successModal">
-    <div class="modal-card" style="max-width: 500px; text-align: center;">
+  <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+    <div class="modal-dialog" style="max-width: 440px; text-align: center;">
       <div class="modal-body" style="padding: 2.5rem 2rem;">
-        <div style="font-size: 3.5rem; color: #10B981; margin-bottom: 1rem;">
-          <i class="fa-solid fa-circle-check"></i>
+        <div style="width: 64px; height: 64px; background: #D1FAE5; color: #047857; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem auto;">
+          <i class="fa-solid fa-check"></i>
         </div>
-        <h3 style="margin-bottom: 0.5rem;">Quotation Request Recorded</h3>
-        <p class="text-dim" style="margin-bottom: 1.5rem;">
+        <h3 id="successModalTitle" style="margin-bottom: 0.5rem; color: var(--color-primary-navy);">Quotation Request Recorded</h3>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">
           Thank you. Your inquiry reference number is:
         </p>
-        <div class="badge-tag" style="font-size: 1.25rem; font-weight: 800; padding: 0.5rem 1.25rem; margin-bottom: 1.5rem; background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A;" id="successLeadRef">
+        <div class="badge-tag" style="font-size: 1.25rem; font-weight: 800; padding: 0.5rem 1.25rem; margin-bottom: 1.5rem; background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; display: inline-block;" id="successLeadRef">
           PSFW-2026-0000
         </div>
-        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 1.5rem;">
+        <p style="font-size: 0.88rem; color: var(--color-text-body); margin-bottom: 1.5rem; line-height: 1.6;">
           Our engineering desk at the Madanapalle works will review your site requirements and contact you promptly.
         </p>
-        <div id="successFallbackNotice" style="display: none; margin-bottom: 1.5rem;">
+        <div id="successFallbackNotice" style="display: none; margin-bottom: 1.25rem;">
           <a href="#" class="btn btn-whatsapp btn-block" id="fallbackWhatsAppBtn" target="_blank" rel="noopener">
             <i class="fa-brands fa-whatsapp"></i> Chat with Engineer on WhatsApp
           </a>
@@ -466,6 +455,6 @@
   <!-- BACK TO TOP -->
   <a href="#" class="back-to-top" id="backToTopBtn" aria-label="Back to top of page"><i class="fa-solid fa-arrow-up"></i></a>
 
-  <script src="js/app.js?v=2.2"></script>
+  <script src="js/app.js?v=2.3"></script>
 </body>
 </html>
