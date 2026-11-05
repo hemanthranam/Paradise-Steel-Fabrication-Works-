@@ -1,52 +1,53 @@
-# Paradise Steel Fabrication Works — Google Apps Script Backend Guide
+# Paradise Steel Fabrication Works (PSFW) — Apps Script Backend v3.0
 
-This folder contains the complete, production-grade Google Apps Script backend for handling website lead capture, Google Sheet recording, and automated email dispatch.
-
----
-
-## 1. Google Sheet Setup
-
-1. Go to [Google Sheets](https://sheets.new) and create a new spreadsheet.
-2. Title the spreadsheet:
-   ```
-   Paradise Steel Fabrication Works — Machinery Enquiries & Leads
-   ```
-3. Rename the first sheet tab from `Sheet1` to:
-   ```
-   Leads
-   ```
-4. Add the following 12 column headers in row 1:
-
-| Col | Header Name | Data Description |
-|:---:|---|---|
-| **A** | `Timestamp` | Submission Date/Time (IST: YYYY-MM-DD HH:mm:ss) |
-| **B** | `Inquiry_ID` | Sequential ID (e.g., PSFW-2026-0001) |
-| **C** | `Full_Name` | Customer Name |
-| **D** | `Phone_Number` | Validated Contact Mobile Number |
-| **E** | `Email` | Customer Email |
-| **F** | `Model_Interested` | SPEED LIFT 150 / SPEED LIFT 200 / SPEED LIFT 500 / AMC |
-| **G** | `Site_Location` | City / Construction Site Pincode |
-| **H** | `Power_Phase` | Single Phase / Three Phase |
-| **I** | `Project_Details` | Building floors, height requirements, load notes |
-| **J** | `Lead_Source` | Webpage source (index.html, quote.html, etc.) |
-| **K** | `Status` | Initial value: `New` |
-| **L** | `Notes` | Internal sales follow-up remarks |
+Production-ready Google Apps Script API engine linking the PSFW public website to the centralized **`PSFW — Business Operations Database`** in Google Drive.
 
 ---
 
-## 2. Deploying the Apps Script
+## 🔒 Security & Architectural Governance
 
-1. In your Google Sheet, click **Extensions** > **Apps Script**.
-2. Delete any existing code in the editor and replace it with the entire contents of [`Code.gs`](file:///Users/rh/.gemini/antigravity-ide/scratch/Paradise-Steel-Fabrication-Works-/google-apps-script/Code.gs).
-3. Click the **Settings (gear icon)** on the left navigation > **Script Properties**:
-   - Add property `MANAGER_EMAIL`: `manager.psfw@gmail.com`
-   - Add property `TIMEZONE`: `Asia/Kolkata`
-   - (Optional) Add property `ADMIN_API_KEY`: A secure random secret for CRM integrations
-4. Click **Deploy** > **New deployment**:
-   - Click the gear icon next to "Select type" and choose **Web app**.
-   - Description: `Paradise Steel Lead API v2.0`
-   - Execute as: **Me** (`your-email@gmail.com`)
-   - Who has access: **Anyone** (Required for public contact form submissions)
-5. Click **Deploy** and grant necessary Google permissions.
-6. Copy the generated **Web App URL** (e.g. `https://script.google.com/macros/s/.../exec`).
-7. Update the `CONFIG.APPS_SCRIPT_URL` in `js/app.js` with your production URL.
+1. **Fail-Closed Administrative Security**:
+   - Privileged operations (`getLeads`, `update_lead`) strictly require an authorized token.
+   - **Zero Hard-Coded Fallbacks**: If `ADMIN_API_KEY` is not explicitly configured in Script Properties, the API automatically rejects administrative requests with a `401 Unauthorized` response.
+2. **Master Database Integration**:
+   - Target Spreadsheet: `PSFW — Business Operations Database` (`01_Leads` worksheet).
+   - Configurable via `MASTER_SHEET_ID` in Script Properties (defaults to `1gDPo7gaOjcPiz5yyWfSkkBlcwG3GN5acFnf3iAuYS7Y`).
+3. **Automated Audit Logging**:
+   - Every lead ingestion and administrative status modification automatically generates an audit record in `15_Audit_Log`.
+4. **Three Official Products**:
+   - Native support and input normalization for:
+     - `SPEED LIFT 150`
+     - `SPEED LIFT 250`
+     - `SPEED LIFT 500`
+5. **Anti-Spam & Concurrency Controls**:
+   - Hidden honeypot field (`leadHoneypot`) for silent bot discarding.
+   - Google `LockService` concurrency lock (up to 10 seconds) ensuring sequential, conflict-free `PSFW-YYYY-XXXX` lead ID generation.
+6. **XSS Protection**:
+   - All user-supplied inputs (`name`, `phone`, `model`, `location`, `projectDetails`) are strictly HTML-escaped before insertion into manager and customer email templates.
+
+---
+
+## ⚙️ Script Properties Configuration
+
+In the Apps Script editor, navigate to **Project Settings (⚙️) > Script Properties** and add the following keys:
+
+| Property Key | Value Description | Example |
+| :--- | :--- | :--- |
+| `ADMIN_API_KEY` | Strong random alphanumeric token for internal CRM queries | *Generated secure 32-char token* |
+| `MASTER_SHEET_ID` | Google Drive File ID of the master database | `1gDPo7gaOjcPiz5yyWfSkkBlcwG3GN5acFnf3iAuYS7Y` |
+| `MANAGER_EMAIL` | Destination mailbox for instant lead notifications | `manager.psfw@gmail.com` |
+
+---
+
+## 🚀 Deployment Instructions
+
+1. Open your Google Apps Script project at [script.google.com](https://script.google.com).
+2. Copy the contents of [`Code.gs`](./Code.gs) into the project editor.
+3. Configure the Script Properties as shown above.
+4. Click **Deploy > Manage Deployments > Edit (or New Deployment)**:
+   - **Select type**: Web app
+   - **Description**: `PSFW API v3.0 - Three Model Support & Master DB`
+   - **Execute as**: `Me (your Google account)`
+   - **Who has access**: `Anyone` (required for public website form submission)
+5. Click **Deploy** and copy the resulting Web App URL (`https://script.google.com/macros/s/.../exec`).
+6. Update `CONFIG.APPS_SCRIPT_URL` in [`js/app.js`](../js/app.js) with the deployment URL.
